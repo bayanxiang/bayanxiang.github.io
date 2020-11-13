@@ -194,7 +194,7 @@
 <ul>
 <li><h5 id="头像设置"><a href="#头像设置" class="headerlink" title="头像设置"></a>头像设置</h5></li>
 </ul>
-<p>打开主题配置文件<code>_config.yml</code>，找到<code>avatar</code>，把更改图片路径</p>
+<p>打开主题配置文件<code>_config.yml</code>，找到<code>avatar</code>，在<code>url</code>后添加图片路径。</p>
 <ul>
 <li><h5 id="文章持久化链接设置"><a href="#文章持久化链接设置" class="headerlink" title="文章持久化链接设置"></a>文章持久化链接设置</h5></li>
 </ul>
@@ -206,6 +206,80 @@
 <p><strong><code>hexo-abbrlink</code>配置：</strong></p>
 <p>打开根目录下的 <code>_config.yml</code> 文件，搜索<code>permalink</code>，注释掉之前的配置，修改为如下配置：</p>
 <p><a href="https://imgchr.com/i/DpE78K"><img src="https://s3.ax1x.com/2020/11/13/DpE78K.png"></a></p>
+<ul>
+<li><h5 id="本地搜索"><a href="#本地搜索" class="headerlink" title="本地搜索"></a>本地搜索</h5></li>
+</ul>
+<p>在博客根目录使用 <code>git bash</code> 执行命令：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install hexo-generator-searchdb --save</span><br></pre></td></tr></table></figure>
+
+<p>在博客根目录下的<code>/theme/next/_config.yml</code>文件任意位置添加配置：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">search:</span><br><span class="line">  path: search.xml</span><br><span class="line">  field: post</span><br><span class="line">  format: html</span><br><span class="line">  <span class="built_in">limit</span>: 10000</span><br></pre></td></tr></table></figure>
+
+<p>在<code>Next</code>主题配置文件<code>_config.yml</code>文件中搜索<code>local_search</code>，将<code>enable</code>改为<code>true</code>：</p>
+<p><a href="https://imgchr.com/i/Dpm3qg"><img src="https://s3.ax1x.com/2020/11/13/Dpm3qg.png"></a></p>
+<p><strong>效果：</strong></p>
+<p><a href="https://imgchr.com/i/Dpm4sO"><img src="https://s3.ax1x.com/2020/11/13/Dpm4sO.png"></a></p>
+<ul>
+<li><h5 id="背景动画设置"><a href="#背景动画设置" class="headerlink" title="背景动画设置"></a>背景动画设置</h5></li>
+</ul>
+<p>①在<code>Next</code>主题根目录使用 <code>git bash</code> 执行<code>canvas_nest module</code>安装命令：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git <span class="built_in">clone</span> https://github.com/theme-next/theme-next-canvas-nest <span class="built_in">source</span>/lib/canvas-nest</span><br></pre></td></tr></table></figure>
+
+<p>②在<code>Next</code>主题根目录<code>_config.yml</code>中任意位置添加如下代码：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">canvas_nest: <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+
+<p>③在博客根目录<code>/source</code>文件夹下创建<code>_data</code>文件夹，在<code>_data</code>文件夹下创建<code>footer.njk</code>文件，写入以下代码，详情请查阅<a href="https://github.com/theme-next/theme-next-canvas-nest">Canvas_nest</a>官方文档（因为在<code>Next 6.0</code>后设置 <code>Canvas_nest: true</code>无反应）：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">&lt;script color=<span class="string">&quot;0,0,255&quot;</span> opacity=<span class="string">&quot;0.7&quot;</span> zIndex=<span class="string">&quot;-1&quot;</span> count=<span class="string">&quot;123&quot;</span> src=<span class="string">&quot;https://cdn.jsdelivr.net/npm/canvas-nest.js@1/dist/canvas-nest.js&quot;</span>&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<p>④打开<code>Next</code>主题<code>_config.yml</code>进行如下更改：</p>
+<p><a href="https://imgchr.com/i/Dp3fqP"><img src="https://s3.ax1x.com/2020/11/13/Dp3fqP.png"></a></p>
+<p><strong>效果图：</strong></p>
+<p><a href="https://imgchr.com/i/Dp3Orq"><img src="https://s3.ax1x.com/2020/11/13/Dp3Orq.png"></a></p>
+<ul>
+<li><h5 id="侧边栏阅读进度百分比"><a href="#侧边栏阅读进度百分比" class="headerlink" title="侧边栏阅读进度百分比"></a>侧边栏阅读进度百分比</h5></li>
+</ul>
+<p>在<code>Next</code>主题根目录编辑<code>_config.yml</code>配置文件，更改如下配置：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">back2top:</span><br><span class="line">  <span class="built_in">enable</span>: <span class="literal">true</span></span><br><span class="line">  sidebar: <span class="literal">true</span></span><br><span class="line">  scrollpercent: <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>效果图：</strong></p>
+<p><a href="https://imgchr.com/i/DprVc6"><img src="https://s3.ax1x.com/2020/11/13/DprVc6.png"></a></p>
+<ul>
+<li><h5 id="图片懒加载设置"><a href="#图片懒加载设置" class="headerlink" title="图片懒加载设置"></a>图片懒加载设置</h5></li>
+</ul>
+<p>在<code>Next</code>主题根目录编辑<code>_config.yml</code>配置文件，更改如下配置：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">lazyload: <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><h5 id="添加图片放大预览功能"><a href="#添加图片放大预览功能" class="headerlink" title="添加图片放大预览功能"></a>添加图片放大预览功能</h5></li>
+</ul>
+<p>在<code>Next</code>主题根目录编辑<code>_config.yml</code>配置文件，更改如下配置：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">lazyload: <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><h5 id="文章正文添加阴影框"><a href="#文章正文添加阴影框" class="headerlink" title="文章正文添加阴影框"></a>文章正文添加阴影框</h5></li>
+</ul>
+<p>①在<code>Next</code>主题根目录编辑<code>_config.yml</code>配置文件，更改如下配置：</p>
+<p><a href="https://imgchr.com/i/Dp7pz8"><img src="https://s3.ax1x.com/2020/11/13/Dp7pz8.png"></a></p>
+<p>②在博客根目录<code>/source/_data</code>文件夹下创建<code>styles.style</code>文件，写入以下代码：</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.post</span> &#123;</span><br><span class="line">   <span class="attribute">margin-top</span>: <span class="number">60px</span>;</span><br><span class="line">   <span class="attribute">margin-bottom</span>: <span class="number">60px</span>;</span><br><span class="line">   <span class="attribute">padding</span>: <span class="number">25px</span>;</span><br><span class="line">   <span class="attribute">-webkit-box-shadow</span>: <span class="number">0</span> <span class="number">0</span> <span class="number">5px</span> <span class="built_in">rgba</span>(<span class="number">202</span>, <span class="number">203</span>, <span class="number">203</span>, .<span class="number">5</span>);</span><br><span class="line">   <span class="attribute">-moz-box-shadow</span>: <span class="number">0</span> <span class="number">0</span> <span class="number">5px</span> <span class="built_in">rgba</span>(<span class="number">202</span>, <span class="number">203</span>, <span class="number">204</span>, .<span class="number">5</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><h5 id="代码块复制和高亮设置"><a href="#代码块复制和高亮设置" class="headerlink" title="代码块复制和高亮设置"></a>代码块复制和高亮设置</h5></li>
+</ul>
+<p>在<code>Next</code>主题根目录编辑<code>_config.yml</code>配置文件，更改如下配置：</p>
+<p><a href="https://imgchr.com/i/DpHL4I"><img src="https://s3.ax1x.com/2020/11/13/DpHL4I.png"></a></p>
+<ul>
+<li><h5 id="文章内链接文本样式"><a href="#文章内链接文本样式" class="headerlink" title="文章内链接文本样式"></a>文章内链接文本样式</h5></li>
+</ul>
+<p>打开<code>Next</code>主题<code>/source/css/_common/components/post/post.styl</code>，在末尾添加如下代码：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">.post-body p a&#123;</span><br><span class="line">  color: #0593d3;</span><br><span class="line">  border-bottom: none;</span><br><span class="line">  border-bottom: 1px solid #0593d3;</span><br><span class="line">  &amp;:hover &#123;</span><br><span class="line">    color: #fc6423;</span><br><span class="line">    border-bottom: none;</span><br><span class="line">    border-bottom: 1px solid #fc6423;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><h5 id="顶部阅读进度条"><a href="#顶部阅读进度条" class="headerlink" title="顶部阅读进度条"></a>顶部阅读进度条</h5></li>
+</ul>
+<p>在<code>Next</code>主题根目录编辑<code>_config.yml</code>配置文件，更改如下配置：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">reading_progress:</span><br><span class="line">  <span class="built_in">enable</span>: <span class="literal">true</span></span><br><span class="line">  color: <span class="string">&quot;#FF0000&quot;</span></span><br><span class="line">  height: 2px</span><br></pre></td></tr></table></figure>
+
 ]]></content>
       <tags>
         <tag>Next</tag>
