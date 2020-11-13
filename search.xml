@@ -280,6 +280,18 @@
 <p>在<code>Next</code>主题根目录编辑<code>_config.yml</code>配置文件，更改如下配置：</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">reading_progress:</span><br><span class="line">  <span class="built_in">enable</span>: <span class="literal">true</span></span><br><span class="line">  color: <span class="string">&quot;#FF0000&quot;</span></span><br><span class="line">  height: 2px</span><br></pre></td></tr></table></figure>
 
+<ul>
+<li><h5 id="书签"><a href="#书签" class="headerlink" title="书签"></a>书签</h5></li>
+</ul>
+<p>在<code>Next</code>主题根目录编辑<code>_config.yml</code>配置文件，更改如下配置：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Bookmark Support</span></span><br><span class="line">bookmark:</span><br><span class="line">  <span class="built_in">enable</span>: <span class="literal">true</span></span><br><span class="line">  <span class="comment"># Customize the color of the bookmark.</span></span><br><span class="line">  color: <span class="string">&quot;#222&quot;</span></span><br><span class="line">  <span class="comment"># If auto, save the reading progress when closing the page or clicking the bookmark-icon.</span></span><br><span class="line">  <span class="comment"># If manual, only save it by clicking the bookmark-icon.</span></span><br><span class="line">  save: auto</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><h5 id="页脚Hexo配置"><a href="#页脚Hexo配置" class="headerlink" title="页脚Hexo配置"></a>页脚<code>Hexo</code>配置</h5></li>
+</ul>
+<p>在<code>Next</code>主题根目录编辑<code>_config.yml</code>配置文件，更改如下配置：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Powered by Hexo &amp; NexT</span></span><br><span class="line">  powered: <span class="literal">false</span></span><br></pre></td></tr></table></figure>
+
 ]]></content>
       <tags>
         <tag>Next</tag>
