@@ -60,6 +60,144 @@
       </tags>
   </entry>
   <entry>
+    <title>Hexo + GitHub搭建个人博客</title>
+    <url>/post/6e072cbe.html</url>
+    <content><![CDATA[<h4 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h4><p>本博客仅用于个人学习分享，文章内容源于网络整理与个人总结，如有侵权，请联系本人删除！</p>
+<h4 id="环境搭建"><a href="#环境搭建" class="headerlink" title="环境搭建"></a>环境搭建</h4><ul>
+<li><h5 id="Node-js"><a href="#Node-js" class="headerlink" title="Node.js"></a><code>Node.js</code></h5><p><code>Node.js</code>官网下载链接：<a href="https://nodejs.org/en/download/">https://nodejs.org/en/download/</a></p>
+<p><img src="https://s1.ax1x.com/2020/10/13/04pZyn.png"></p>
+</li>
+<li><h5 id="Node-js安装教程：https-www-runoob-com-nodejs-nodejs-tutorial-html"><a href="#Node-js安装教程：https-www-runoob-com-nodejs-nodejs-tutorial-html" class="headerlink" title="Node.js安装教程：https://www.runoob.com/nodejs/nodejs-tutorial.html"></a><code>Node.js</code>安装教程：<a href="https://www.runoob.com/nodejs/nodejs-tutorial.html">https://www.runoob.com/nodejs/nodejs-tutorial.html</a></h5></li>
+<li><h5 id="Git"><a href="#Git" class="headerlink" title="Git"></a><code>Git</code></h5><p><code>Git</code>官网下载链接：<a href="https://git-scm.com/downloads">https://git-scm.com/downloads</a></p>
+<p><img src="https://s1.ax1x.com/2020/10/13/04pGl9.png"></p>
+</li>
+<li><h5 id="Git安装教程：https-www-runoob-com-git-git-tutorial-html"><a href="#Git安装教程：https-www-runoob-com-git-git-tutorial-html" class="headerlink" title="Git安装教程：https://www.runoob.com/git/git-tutorial.html"></a><code>Git</code>安装教程：<a href="https://www.runoob.com/git/git-tutorial.html">https://www.runoob.com/git/git-tutorial.html</a></h5></li>
+</ul>
+<h4 id="环境测试"><a href="#环境测试" class="headerlink" title="环境测试"></a>环境测试</h4><p>搭建完成后，按<code>Win + R</code> 输入 <code>cmd</code> 按回车， 如下图出现程序版本号，即环境搭建完成。</p>
+<ul>
+<li><h5 id="Node测试：node-v"><a href="#Node测试：node-v" class="headerlink" title="Node测试：node -v"></a><code>Node</code>测试：<code>node -v</code></h5></li>
+<li><h5 id="Npm测试：npm-v"><a href="#Npm测试：npm-v" class="headerlink" title="Npm测试：npm -v"></a><code>Npm</code>测试：<code>npm -v</code></h5></li>
+<li><h5 id="Git测试：git-version"><a href="#Git测试：git-version" class="headerlink" title="Git测试：git --version"></a><code>Git</code>测试：<code>git --version</code></h5></li>
+</ul>
+<p><img src="https://s1.ax1x.com/2020/10/13/04PKTP.png"></p>
+<h4 id="Hexo远端部署"><a href="#Hexo远端部署" class="headerlink" title="Hexo远端部署"></a><code>Hexo</code>远端部署</h4><ul>
+<li><h5 id="GitHub注册"><a href="#GitHub注册" class="headerlink" title="GitHub注册"></a><code>GitHub</code>注册</h5><p>登录<a href="https://github.com/">GitHub官网</a>使用邮箱注册，选择免费账户（<code>Free</code>），并完成邮件验证。</p>
+<p>如有账号，直接点击<code>Sin in</code>进入即可！</p>
+</li>
+</ul>
+<p><img src="https://s1.ax1x.com/2020/10/13/04FaGT.png"></p>
+<p>注册完成后，还需要在本地配置一下自己的个人信息，进入博客根目录，<code>右键  -&gt; Git Bash Here</code>，设置用户名和邮箱：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git config --global user.name <span class="string">&quot;GitHub 用户名&quot;</span></span><br><span class="line">$ git config --global user.email <span class="string">&quot;GitHub 邮箱&quot;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><h5 id="创建-SSH-密匙"><a href="#创建-SSH-密匙" class="headerlink" title="创建 SSH 密匙"></a>创建 SSH 密匙</h5><p>输入<code>ssh-keygen -t rsa -C &quot;GitHub 邮箱&quot;</code>，然后一直按回车。</p>
+</li>
+</ul>
+<p><img src="https://s1.ax1x.com/2020/10/13/04AIUI.png"></p>
+<ul>
+<li><h5 id="添加密钥"><a href="#添加密钥" class="headerlink" title="添加密钥"></a>添加密钥</h5><p>① 进入 <code>[C:\Users\用户名.ssh]</code> 目录（要勾选显示“隐藏的项目”），用记事本打开<code>id_rsa.pub</code> 文件并复制里面的内容。</p>
+</li>
+</ul>
+<p><img src="https://s1.ax1x.com/2020/10/13/04EAr4.png"></p>
+<p>​        ② 登陆<code>GitHub</code>，进入 <code>Settings</code> 页面，选择左边栏的 <code>SSH and GPG keys</code>，点击 <code>New SSH key</code>。</p>
+<p><img src="https://s1.ax1x.com/2020/10/13/04EDsg.png"></p>
+<p>​        ③ <code>Title</code> 随便取个名字，粘贴复制的 <code>id_rsa.pub</code> 内容到 <code>Key</code> 中，点击 <code>Add SSH key</code> 完成添加。</p>
+<ul>
+<li><h5 id="验证连接"><a href="#验证连接" class="headerlink" title="验证连接"></a>验证连接</h5></li>
+</ul>
+<p>进入博客根目录打开 <code>Git Bash</code>，输入 <code>ssh -T git@github.com</code> 出现 <code>“Are you sure……”</code>，输入 <code>yes</code> 回车确认。</p>
+<p>显示 <code>“Hi xxx! You’ve successfully……”</code> 即连接成功。</p>
+<p><img src="https://s1.ax1x.com/2020/10/13/04VhtI.png"></p>
+<ul>
+<li><h5 id="创建GitHub-Pages仓库"><a href="#创建GitHub-Pages仓库" class="headerlink" title="创建GitHub Pages仓库"></a>创建<code>GitHub Pages</code>仓库</h5><p><code>GitHub</code> 主页右上角加号 -&gt; <code>New repository</code>：</p>
+<p>① <code>Repository name</code> 中输入 <code>用户名.github.io</code></p>
+<p>② 勾选 <code>“Initialize this repository with中Add a README file”</code></p>
+<p>③ <code>Description</code> 选填</p>
+<p>④ 填好后点击 <code>Create repository</code> 创建。</p>
+</li>
+</ul>
+<p><img src="https://s1.ax1x.com/2020/10/13/04eSIA.png"></p>
+<p>创建后默认自动启用 <code>HTTPS</code>，博客地址为：<code>https://用户名.github.io</code></p>
+<h4 id="Hexo"><a href="#Hexo" class="headerlink" title="Hexo"></a><code>Hexo</code></h4><ul>
+<li><h5 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装<code>Hexo</code></h5><p>打开新建的<code>Blog</code>文件夹根目录，右键 -&gt; <code>Git Bash Here</code>。</p>
+</li>
+</ul>
+<p>使用 <code>npm</code> 一键安装 <code>Hexo</code> 博客程序：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+
+<p><a href="https://s1.ax1x.com/2020/07/28/aA6yO1.png"><img src="https://s1.ax1x.com/2020/07/28/aA6yO1.png" alt="Hexo安装成功"></a></p>
+<ul>
+<li><h5 id="Hexo初始化和本地预览"><a href="#Hexo初始化和本地预览" class="headerlink" title="Hexo初始化和本地预览"></a><code>Hexo</code>初始化和本地预览</h5><p>初始化并安装所需组件：</p>
+</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo init      <span class="comment"># 初始化（进行hexo init一定要保证文件夹为空文件夹）</span></span><br><span class="line">npm install    <span class="comment"># 安装组件</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://s1.ax1x.com/2020/10/14/04ovon.png"></p>
+<p>完成后依次输入下面命令，启动本地服务器进行预览：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo g   <span class="comment"># 生成页面</span></span><br><span class="line">hexo s   <span class="comment"># 启动预览</span></span><br></pre></td></tr></table></figure>
+
+<p>访问 <code>http://localhost:4000</code>，出现 <code>Hexo</code> 默认页面，本地博客安装成功！</p>
+<p><img src="https://s1.ax1x.com/2020/10/14/04TNfP.png"></p>
+<ul>
+<li><h5 id="部署-Hexo-到-GitHub"><a href="#部署-Hexo-到-GitHub" class="headerlink" title="部署 Hexo 到 GitHub"></a>部署 <code>Hexo</code> 到 <code>GitHub</code></h5><p>进入博客根目录，打开 <code>git bash</code> 输入 <code>npm install hexo-deployer-git --save</code> 命令安装插件:</p>
+</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+
+<p>然后修改 <code>_config.yml</code> 文件末尾的 <code>Deployment</code> 部分，修改成如下：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  <span class="built_in">type</span>: git</span><br><span class="line">  repository: git@github.com:用户名/用户名.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
+
+<p>完成后先运行<code>hexo clean</code>，在运行 <code>hexo g -d</code> 将网站上传部署到 <code>GitHub</code> 。</p>
+<p>完成！这时访问我们的 <code>GitHub</code> 域名 <code>https://用户名.github.io</code> 就可以看到 <code>Hexo</code> 网站了。</p>
+<ul>
+<li><h5 id="发布博客"><a href="#发布博客" class="headerlink" title="发布博客"></a>发布博客</h5><p>进入博客根目录，右键打开 <code>Git Bash Here</code>，创建博文：</p>
+</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo new <span class="string">&quot;xxxx&quot;</span>  <span class="comment">#新建文章</span></span><br></pre></td></tr></table></figure>
+
+<p>然后 <code>source</code> 文件夹中会出现一个 <code>xxxx.md</code> 文件，就可以使用 <code>Markdown</code> 编辑器，推荐<a href="https://typora.io/">Typora</a>。</p>
+<p>写完后运行下面代码将文章渲染并部署到 <code>GitHub Pages</code> 上完成发布。</p>
+<p>每次发布文章都是顺序执行下面三条命令（建议在本地预览之后在选择部署到<code>GitHub</code>），如在本地预览则把<code>hexo d</code>换为<code>hexo s</code>即可。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo clean   <span class="comment">#清除缓存</span></span><br><span class="line">hexo g       <span class="comment"># 生成页面</span></span><br><span class="line">hexo d       <span class="comment"># 部署发布（hexo s  #启动服务预览）  </span></span><br><span class="line">hexo g -d    <span class="comment">#生成页面部署发布一体化操作</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="Hexo常用命令"><a href="#Hexo常用命令" class="headerlink" title="Hexo常用命令"></a><code>Hexo</code>常用命令</h4><ul>
+<li><h5 id="初始化命令"><a href="#初始化命令" class="headerlink" title="初始化命令"></a>初始化命令</h5></li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install hexo -g      <span class="comment">#全局安装Hexo</span></span><br><span class="line">npm update hexo -g       <span class="comment">#升级 </span></span><br><span class="line">hexo init                <span class="comment">#初始化</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><h5 id="命令简称"><a href="#命令简称" class="headerlink" title="命令简称"></a>命令简称</h5></li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo n <span class="string">&quot;xxxx&quot;</span> = hexo new <span class="string">&quot;xxxx&quot;</span>     <span class="comment">#新建文章</span></span><br><span class="line">hexo g = hexo generate              <span class="comment">#渲染</span></span><br><span class="line">hexo s = hexo server                <span class="comment">#本地预览</span></span><br><span class="line">hexo d = hexo deploy                <span class="comment">#部署</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><h5 id="其他命令"><a href="#其他命令" class="headerlink" title="其他命令"></a>其他命令</h5></li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo server      //Hexo会监视文件变动并自动更新</span><br><span class="line">hexo server -s  //静态模式</span><br><span class="line">hexo server -p xxxx   //更改端口</span><br><span class="line">hexo server -i xxx.xxx.x.x   //自定义 IP</span><br><span class="line">hexo clean   //清除缓存，若是网页正常情况下可以忽略这条命令</span><br></pre></td></tr></table></figure>
+
+<h4 id="踩坑指南"><a href="#踩坑指南" class="headerlink" title="踩坑指南"></a>踩坑指南</h4><ul>
+<li><h5 id="404页面"><a href="#404页面" class="headerlink" title="404页面"></a>404页面</h5><p><img src="https://s1.ax1x.com/2020/10/14/04qZnO.png"></p>
+</li>
+</ul>
+<p>出现404界面的原因：</p>
+<p>① <code>Repository name</code>填写与<code>Owner</code>不一致</p>
+<p>② 勾选<code>Add a README file</code>，默认分支没有设置为<code>master</code></p>
+<p><img src="https://s1.ax1x.com/2020/10/14/04LKqU.png"></p>
+<p>如果<code>Repository name</code>不规范，只需去<code>Settings</code>更改<code>Repository name</code>即可</p>
+<p><img src="https://s1.ax1x.com/2020/10/14/04O80S.png"></p>
+<h4 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h4><ul>
+<li>博客图片不建议本地上传，建议采用<a href="https://imgchr.com/i/04O80S">路过图传</a></li>
+</ul>
+<p><img src="https://s1.ax1x.com/2020/10/14/04xuE8.png"></p>
+<ul>
+<li>所需软件、环境搭建，建议从官网入手</li>
+</ul>
+]]></content>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hexo + Next主题美化（基于本博客）</title>
     <url>/post/af96d78a.html</url>
     <content><![CDATA[<h4 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h4><p>本博客仅用于个人学习分享，文章内容源于网络整理与个人总结，如有侵权，请联系本人删除！</p>
@@ -219,141 +357,94 @@
       </tags>
   </entry>
   <entry>
-    <title>Hexo + GitHub搭建个人博客</title>
-    <url>/post/6e072cbe.html</url>
+    <title>Java教程</title>
+    <url>/post/cf5ee103.html</url>
     <content><![CDATA[<h4 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h4><p>本博客仅用于个人学习分享，文章内容源于网络整理与个人总结，如有侵权，请联系本人删除！</p>
-<h4 id="环境搭建"><a href="#环境搭建" class="headerlink" title="环境搭建"></a>环境搭建</h4><ul>
-<li><h5 id="Node-js"><a href="#Node-js" class="headerlink" title="Node.js"></a><code>Node.js</code></h5><p><code>Node.js</code>官网下载链接：<a href="https://nodejs.org/en/download/">https://nodejs.org/en/download/</a></p>
-<p><img src="https://s1.ax1x.com/2020/10/13/04pZyn.png"></p>
-</li>
-<li><h5 id="Node-js安装教程：https-www-runoob-com-nodejs-nodejs-tutorial-html"><a href="#Node-js安装教程：https-www-runoob-com-nodejs-nodejs-tutorial-html" class="headerlink" title="Node.js安装教程：https://www.runoob.com/nodejs/nodejs-tutorial.html"></a><code>Node.js</code>安装教程：<a href="https://www.runoob.com/nodejs/nodejs-tutorial.html">https://www.runoob.com/nodejs/nodejs-tutorial.html</a></h5></li>
-<li><h5 id="Git"><a href="#Git" class="headerlink" title="Git"></a><code>Git</code></h5><p><code>Git</code>官网下载链接：<a href="https://git-scm.com/downloads">https://git-scm.com/downloads</a></p>
-<p><img src="https://s1.ax1x.com/2020/10/13/04pGl9.png"></p>
-</li>
-<li><h5 id="Git安装教程：https-www-runoob-com-git-git-tutorial-html"><a href="#Git安装教程：https-www-runoob-com-git-git-tutorial-html" class="headerlink" title="Git安装教程：https://www.runoob.com/git/git-tutorial.html"></a><code>Git</code>安装教程：<a href="https://www.runoob.com/git/git-tutorial.html">https://www.runoob.com/git/git-tutorial.html</a></h5></li>
+<h4 id="Java"><a href="#Java" class="headerlink" title="Java"></a>Java</h4><p><code>Java</code>是一门面向对象编程语言，不仅吸收了C++语言的各种优点，还摒弃了<code>C++</code>里难以理解的多继承、指针等概念，因此Java语言具有功能强大和简单易用两个特征。</p>
+<h5 id="Java简介"><a href="#Java简介" class="headerlink" title="Java简介"></a>Java简介</h5><ul>
+<li><code>Java</code> 是由<code>Sun Microsystems</code>公司于1995年5月推出的高级程序设计语言。</li>
+<li><code>Java</code>可运行于多个平台，如<code>Windows</code>, Mac OS，及其他多种<code>UNIX</code>版本的系统。</li>
 </ul>
-<h4 id="环境测试"><a href="#环境测试" class="headerlink" title="环境测试"></a>环境测试</h4><p>搭建完成后，按<code>Win + R</code> 输入 <code>cmd</code> 按回车， 如下图出现程序版本号，即环境搭建完成。</p>
-<ul>
-<li><h5 id="Node测试：node-v"><a href="#Node测试：node-v" class="headerlink" title="Node测试：node -v"></a><code>Node</code>测试：<code>node -v</code></h5></li>
-<li><h5 id="Npm测试：npm-v"><a href="#Npm测试：npm-v" class="headerlink" title="Npm测试：npm -v"></a><code>Npm</code>测试：<code>npm -v</code></h5></li>
-<li><h5 id="Git测试：git-version"><a href="#Git测试：git-version" class="headerlink" title="Git测试：git --version"></a><code>Git</code>测试：<code>git --version</code></h5></li>
+<h5 id="Java主要特性："><a href="#Java主要特性：" class="headerlink" title="Java主要特性："></a><code>Java</code>主要特性：</h5><ul>
+<li><code>Java</code>语言是简单的</li>
+<li><code>Java</code>语言是面向对象的</li>
+<li><code>Java</code>语言是分布式的</li>
+<li><code>Java</code>语言是健壮的</li>
+<li><code>Java</code>语言是安全的</li>
+<li><code>Java</code>语言是体系结构中立的</li>
+<li><code>Java</code>语言是可移植的</li>
+<li><code>Java</code>语言是解释型的</li>
+<li><code>Java</code>语言是高性能的</li>
+<li><code>Java</code>语言是多线程的</li>
+<li><code>Java</code>语言是动态的</li>
 </ul>
-<p><img src="https://s1.ax1x.com/2020/10/13/04PKTP.png"></p>
-<h4 id="Hexo远端部署"><a href="#Hexo远端部署" class="headerlink" title="Hexo远端部署"></a><code>Hexo</code>远端部署</h4><ul>
-<li><h5 id="GitHub注册"><a href="#GitHub注册" class="headerlink" title="GitHub注册"></a><code>GitHub</code>注册</h5><p>登录<a href="https://github.com/">GitHub官网</a>使用邮箱注册，选择免费账户（<code>Free</code>），并完成邮件验证。</p>
-<p>如有账号，直接点击<code>Sin in</code>进入即可！</p>
-</li>
+<h5 id="Java发展历史"><a href="#Java发展历史" class="headerlink" title="Java发展历史"></a><code>Java</code>发展历史</h5><p><a href="https://imgchr.com/i/DyQj8x"><img src="https://s3.ax1x.com/2020/11/28/DyQj8x.png"></a></p>
+<h4 id="Java开发环境配置"><a href="#Java开发环境配置" class="headerlink" title="Java开发环境配置"></a><code>Java</code>开发环境配置</h4><h5 id="JRE"><a href="#JRE" class="headerlink" title="JRE"></a><code>JRE</code></h5><ul>
+<li><code>Java</code>运行环境<code>（Java Runtime Environment</code>，简称<code>JRE）</code>是一个软件，由太阳微系统所研发，<code>JRE</code>可以让计算机系统运行<code>Java</code>应用程序<code>（Java Application）</code>。</li>
+<li><code>JRE</code>的内部有一个<code>Java</code>虚拟机（<code>Java Virtual Machine，JVM</code>）以及一些标准的类别函数库（<code>Class Library</code>）。</li>
 </ul>
-<p><img src="https://s1.ax1x.com/2020/10/13/04FaGT.png"></p>
-<p>注册完成后，还需要在本地配置一下自己的个人信息，进入博客根目录，<code>右键  -&gt; Git Bash Here</code>，设置用户名和邮箱：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git config --global user.name <span class="string">&quot;GitHub 用户名&quot;</span></span><br><span class="line">$ git config --global user.email <span class="string">&quot;GitHub 邮箱&quot;</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><h5 id="创建-SSH-密匙"><a href="#创建-SSH-密匙" class="headerlink" title="创建 SSH 密匙"></a>创建 SSH 密匙</h5><p>输入<code>ssh-keygen -t rsa -C &quot;GitHub 邮箱&quot;</code>，然后一直按回车。</p>
-</li>
-</ul>
-<p><img src="https://s1.ax1x.com/2020/10/13/04AIUI.png"></p>
-<ul>
-<li><h5 id="添加密钥"><a href="#添加密钥" class="headerlink" title="添加密钥"></a>添加密钥</h5><p>① 进入 <code>[C:\Users\用户名.ssh]</code> 目录（要勾选显示“隐藏的项目”），用记事本打开<code>id_rsa.pub</code> 文件并复制里面的内容。</p>
-</li>
-</ul>
-<p><img src="https://s1.ax1x.com/2020/10/13/04EAr4.png"></p>
-<p>​        ② 登陆<code>GitHub</code>，进入 <code>Settings</code> 页面，选择左边栏的 <code>SSH and GPG keys</code>，点击 <code>New SSH key</code>。</p>
-<p><img src="https://s1.ax1x.com/2020/10/13/04EDsg.png"></p>
-<p>​        ③ <code>Title</code> 随便取个名字，粘贴复制的 <code>id_rsa.pub</code> 内容到 <code>Key</code> 中，点击 <code>Add SSH key</code> 完成添加。</p>
-<ul>
-<li><h5 id="验证连接"><a href="#验证连接" class="headerlink" title="验证连接"></a>验证连接</h5></li>
-</ul>
-<p>进入博客根目录打开 <code>Git Bash</code>，输入 <code>ssh -T git@github.com</code> 出现 <code>“Are you sure……”</code>，输入 <code>yes</code> 回车确认。</p>
-<p>显示 <code>“Hi xxx! You’ve successfully……”</code> 即连接成功。</p>
-<p><img src="https://s1.ax1x.com/2020/10/13/04VhtI.png"></p>
-<ul>
-<li><h5 id="创建GitHub-Pages仓库"><a href="#创建GitHub-Pages仓库" class="headerlink" title="创建GitHub Pages仓库"></a>创建<code>GitHub Pages</code>仓库</h5><p><code>GitHub</code> 主页右上角加号 -&gt; <code>New repository</code>：</p>
-<p>① <code>Repository name</code> 中输入 <code>用户名.github.io</code></p>
-<p>② 勾选 <code>“Initialize this repository with中Add a README file”</code></p>
-<p>③ <code>Description</code> 选填</p>
-<p>④ 填好后点击 <code>Create repository</code> 创建。</p>
-</li>
-</ul>
-<p><img src="https://s1.ax1x.com/2020/10/13/04eSIA.png"></p>
-<p>创建后默认自动启用 <code>HTTPS</code>，博客地址为：<code>https://用户名.github.io</code></p>
-<h4 id="Hexo"><a href="#Hexo" class="headerlink" title="Hexo"></a><code>Hexo</code></h4><ul>
-<li><h5 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装<code>Hexo</code></h5><p>打开新建的<code>Blog</code>文件夹根目录，右键 -&gt; <code>Git Bash Here</code>。</p>
-</li>
-</ul>
-<p>使用 <code>npm</code> 一键安装 <code>Hexo</code> 博客程序：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
-
-<p><a href="https://s1.ax1x.com/2020/07/28/aA6yO1.png"><img src="https://s1.ax1x.com/2020/07/28/aA6yO1.png" alt="Hexo安装成功"></a></p>
-<ul>
-<li><h5 id="Hexo初始化和本地预览"><a href="#Hexo初始化和本地预览" class="headerlink" title="Hexo初始化和本地预览"></a><code>Hexo</code>初始化和本地预览</h5><p>初始化并安装所需组件：</p>
-</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo init      <span class="comment"># 初始化（进行hexo init一定要保证文件夹为空文件夹）</span></span><br><span class="line">npm install    <span class="comment"># 安装组件</span></span><br></pre></td></tr></table></figure>
-
-<p><img src="https://s1.ax1x.com/2020/10/14/04ovon.png"></p>
-<p>完成后依次输入下面命令，启动本地服务器进行预览：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo g   <span class="comment"># 生成页面</span></span><br><span class="line">hexo s   <span class="comment"># 启动预览</span></span><br></pre></td></tr></table></figure>
-
-<p>访问 <code>http://localhost:4000</code>，出现 <code>Hexo</code> 默认页面，本地博客安装成功！</p>
-<p><img src="https://s1.ax1x.com/2020/10/14/04TNfP.png"></p>
-<ul>
-<li><h5 id="部署-Hexo-到-GitHub"><a href="#部署-Hexo-到-GitHub" class="headerlink" title="部署 Hexo 到 GitHub"></a>部署 <code>Hexo</code> 到 <code>GitHub</code></h5><p>进入博客根目录，打开 <code>git bash</code> 输入 <code>npm install hexo-deployer-git --save</code> 命令安装插件:</p>
-</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
-
-<p>然后修改 <code>_config.yml</code> 文件末尾的 <code>Deployment</code> 部分，修改成如下：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  <span class="built_in">type</span>: git</span><br><span class="line">  repository: git@github.com:用户名/用户名.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
-
-<p>完成后先运行<code>hexo clean</code>，在运行 <code>hexo g -d</code> 将网站上传部署到 <code>GitHub</code> 。</p>
-<p>完成！这时访问我们的 <code>GitHub</code> 域名 <code>https://用户名.github.io</code> 就可以看到 <code>Hexo</code> 网站了。</p>
-<ul>
-<li><h5 id="发布博客"><a href="#发布博客" class="headerlink" title="发布博客"></a>发布博客</h5><p>进入博客根目录，右键打开 <code>Git Bash Here</code>，创建博文：</p>
-</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo new <span class="string">&quot;xxxx&quot;</span>  <span class="comment">#新建文章</span></span><br></pre></td></tr></table></figure>
-
-<p>然后 <code>source</code> 文件夹中会出现一个 <code>xxxx.md</code> 文件，就可以使用 <code>Markdown</code> 编辑器，推荐<a href="https://typora.io/">Typora</a>。</p>
-<p>写完后运行下面代码将文章渲染并部署到 <code>GitHub Pages</code> 上完成发布。</p>
-<p>每次发布文章都是顺序执行下面三条命令（建议在本地预览之后在选择部署到<code>GitHub</code>），如在本地预览则把<code>hexo d</code>换为<code>hexo s</code>即可。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo clean   <span class="comment">#清除缓存</span></span><br><span class="line">hexo g       <span class="comment"># 生成页面</span></span><br><span class="line">hexo d       <span class="comment"># 部署发布（hexo s  #启动服务预览）  </span></span><br><span class="line">hexo g -d    <span class="comment">#生成页面部署发布一体化操作</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="Hexo常用命令"><a href="#Hexo常用命令" class="headerlink" title="Hexo常用命令"></a><code>Hexo</code>常用命令</h4><ul>
-<li><h5 id="初始化命令"><a href="#初始化命令" class="headerlink" title="初始化命令"></a>初始化命令</h5></li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install hexo -g      <span class="comment">#全局安装Hexo</span></span><br><span class="line">npm update hexo -g       <span class="comment">#升级 </span></span><br><span class="line">hexo init                <span class="comment">#初始化</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><h5 id="命令简称"><a href="#命令简称" class="headerlink" title="命令简称"></a>命令简称</h5></li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo n <span class="string">&quot;xxxx&quot;</span> = hexo new <span class="string">&quot;xxxx&quot;</span>     <span class="comment">#新建文章</span></span><br><span class="line">hexo g = hexo generate              <span class="comment">#渲染</span></span><br><span class="line">hexo s = hexo server                <span class="comment">#本地预览</span></span><br><span class="line">hexo d = hexo deploy                <span class="comment">#部署</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><h5 id="其他命令"><a href="#其他命令" class="headerlink" title="其他命令"></a>其他命令</h5></li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo server      //Hexo会监视文件变动并自动更新</span><br><span class="line">hexo server -s  //静态模式</span><br><span class="line">hexo server -p xxxx   //更改端口</span><br><span class="line">hexo server -i xxx.xxx.x.x   //自定义 IP</span><br><span class="line">hexo clean   //清除缓存，若是网页正常情况下可以忽略这条命令</span><br></pre></td></tr></table></figure>
-
-<h4 id="踩坑指南"><a href="#踩坑指南" class="headerlink" title="踩坑指南"></a>踩坑指南</h4><ul>
-<li><h5 id="404页面"><a href="#404页面" class="headerlink" title="404页面"></a>404页面</h5><p><img src="https://s1.ax1x.com/2020/10/14/04qZnO.png"></p>
-</li>
-</ul>
-<p>出现404界面的原因：</p>
-<p>① <code>Repository name</code>填写与<code>Owner</code>不一致</p>
-<p>② 勾选<code>Add a README file</code>，默认分支没有设置为<code>master</code></p>
-<p><img src="https://s1.ax1x.com/2020/10/14/04LKqU.png"></p>
-<p>如果<code>Repository name</code>不规范，只需去<code>Settings</code>更改<code>Repository name</code>即可</p>
-<p><img src="https://s1.ax1x.com/2020/10/14/04O80S.png"></p>
-<h4 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h4><ul>
-<li>博客图片不建议本地上传，建议采用<a href="https://imgchr.com/i/04O80S">路过图传</a></li>
-</ul>
-<p><img src="https://s1.ax1x.com/2020/10/14/04xuE8.png"></p>
-<ul>
-<li>所需软件、环境搭建，建议从官网入手</li>
-</ul>
+<h5 id="JDK"><a href="#JDK" class="headerlink" title="JDK"></a><code>JDK</code></h5><p><code>JDK</code>是 <code>Java</code>语言的软件开发工具包，主要用于移动设备、嵌入式设备上的<code>java</code>应用程序。<code>JDK</code>是整个<code>Java</code>开发的核心，它包含了<code>Java</code>的运行环境（<code>JVM+Java</code>系统类库）和<code>Java</code>工具。</p>
+<h5 id="JVM"><a href="#JVM" class="headerlink" title="JVM"></a><code>JVM</code></h5><p><code>JVM</code>是<code>Java Virtual Machine（Java</code>虚拟机）的缩写，<code>JVM</code>是一种用于计算设备的规范，它是一个虚构出来的计算机，是通过在实际的计算机上仿真模拟各种计算机功能来实现的。</p>
+<h5 id="JDK、JRE和JVM的关系"><a href="#JDK、JRE和JVM的关系" class="headerlink" title="JDK、JRE和JVM的关系"></a><code>JDK、JRE</code>和<code>JVM</code>的关系</h5><p><a href="https://imgchr.com/i/Dy1tfI"><img src="https://s3.ax1x.com/2020/11/28/Dy1tfI.png"></a></p>
+<h5 id="JDK的下载安装"><a href="#JDK的下载安装" class="headerlink" title="JDK的下载安装"></a><code>JDK</code>的下载安装</h5><h6 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h6><p>点击下载<code>Java</code>开发工具包<a href="https://www.oracle.com/java/technologies/javase-downloads.html">JDK</a>如图所示：</p>
+<p><a href="https://imgchr.com/i/DyJ9N4"><img src="https://s3.ax1x.com/2020/11/28/DyJ9N4.png"></a></p>
+<h6 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h6><p>①双击安装程序，点击下一步</p>
+<p><a href="https://imgchr.com/i/DyJ1gI"><img src="https://s3.ax1x.com/2020/11/28/DyJ1gI.png"></a></p>
+<p>②点击下一步</p>
+<p><a href="https://imgchr.com/i/DyJGKP"><img src="https://s3.ax1x.com/2020/11/28/DyJGKP.png"></a></p>
+<p>③点击关闭</p>
+<p><a href="https://imgchr.com/i/DyJR54"><img src="https://s3.ax1x.com/2020/11/28/DyJR54.png"></a></p>
+<h6 id="JDK的安装目录"><a href="#JDK的安装目录" class="headerlink" title="JDK的安装目录"></a><code>JDK</code>的安装目录</h6><table>
+<thead>
+<tr>
+<th align="center">目录名称</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>bin</code></td>
+<td align="center">存放各种<code>JDK</code>工具命令。<code>javac</code>和<code>java</code>也存放于这个目录</td>
+</tr>
+<tr>
+<td align="center"><code>conf</code></td>
+<td align="center">存放<code>JDK</code>相关配置文件</td>
+</tr>
+<tr>
+<td align="center"><code>include</code></td>
+<td align="center">存放一些平台特定头文件</td>
+</tr>
+<tr>
+<td align="center"><code>jmods</code></td>
+<td align="center">存放<code>JDK</code>各种模块</td>
+</tr>
+<tr>
+<td align="center"><code>legal</code></td>
+<td align="center">存放<code>JDK</code>各模块的授权文档</td>
+</tr>
+<tr>
+<td align="center"><code>lib</code></td>
+<td align="center">存放<code>JDK</code>工具的一些补充JAR包</td>
+</tr>
+</tbody></table>
+<h5 id="配置环境变量"><a href="#配置环境变量" class="headerlink" title="配置环境变量"></a>配置环境变量</h5><p>①右击我的电脑–属性–高级系统设置–高级–环境变量</p>
+<p><a href="https://imgchr.com/i/Dy0xDs"><img src="https://s3.ax1x.com/2020/11/28/Dy0xDs.png"></a></p>
+<p><a href="https://imgchr.com/i/DyBpEq"><img src="https://s3.ax1x.com/2020/11/28/DyBpEq.png"></a></p>
+<p><a href="https://imgchr.com/i/DyBAv4"><img src="https://s3.ax1x.com/2020/11/28/DyBAv4.png"></a></p>
+<p>②点击系统变量里面的新建变量名填入<code>JAVA_HOME</code>，变量值就是安装<code>JDK</code>的路径</p>
+<p><a href="https://imgchr.com/i/DyBaIP"><img src="https://s3.ax1x.com/2020/11/28/DyBaIP.png"></a></p>
+<p>③同样的方法新建一个变量名为<code>CLASSPATH</code>，变量值填入<code>.;%JAVA_HOME%\lib;%JAVA_HOME%\lib\dt.jar;%JAVA_HOME%\lib\tools.jar;</code></p>
+<p><a href="https://imgchr.com/i/DyBoM4"><img src="https://s3.ax1x.com/2020/11/28/DyBoM4.png"></a></p>
+<p>④点击系统变量里面的<code>Path</code>编辑添加一个<code>%JAVA_HOME%\bin;%JAVA_HOME%\jre\bin</code></p>
+<p><a href="https://imgchr.com/i/DyD2OH"><img src="https://s3.ax1x.com/2020/11/28/DyD2OH.png"></a></p>
+<p>⑤依次点击确定完成本次环境配置</p>
+<h5 id="通过控制台检测环境是否配置成功"><a href="#通过控制台检测环境是否配置成功" class="headerlink" title="通过控制台检测环境是否配置成功"></a>通过控制台检测环境是否配置成功</h5><p>①<code>Win+R</code>打开<code>CMD</code>控制台</p>
+<p>②依次键入<code>java -version、java、javac</code>出现以下信息表示配置成功</p>
+<p><a href="https://imgchr.com/i/D6pZy6"><img src="https://s3.ax1x.com/2020/11/28/D6pZy6.png"></a></p>
+<p><a href="https://imgchr.com/i/D6p8SI"><img src="https://s3.ax1x.com/2020/11/28/D6p8SI.png"></a></p>
+<p><a href="https://imgchr.com/i/D6p1fA"><img src="https://s3.ax1x.com/2020/11/28/D6p1fA.png"></a></p>
 ]]></content>
       <tags>
-        <tag>Hexo</tag>
+        <tag>Java</tag>
       </tags>
   </entry>
 </search>
