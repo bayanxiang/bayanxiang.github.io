@@ -447,4 +447,39 @@
         <tag>Java</tag>
       </tags>
   </entry>
+  <entry>
+    <title>web前端</title>
+    <url>/post/b49262eb.html</url>
+    <content><![CDATA[<h4 id="article元素"><a href="#article元素" class="headerlink" title="article元素"></a><code>article</code>元素</h4><ul>
+<li><code>article</code>元素代表文档、页面或应用程序中独立的、完整的、可以独自被外部引用的内容。它可以是一篇博客或者报刊中的文章，一片论坛帖子、一段用户评论或独立的插件，或其他任何独立的内容。</li>
+<li><code>article</code>元素是可以嵌套使用的。</li>
+<li><code>article</code>元素可以用来表示插件。</li>
+</ul>
+<h4 id="aside元素"><a href="#aside元素" class="headerlink" title="aside元素"></a><code>aside</code>元素</h4><p><code>aside</code>元素用来表示当前页面或文章的附属信息部分，它可以包含与当前页面或主要内容相关的引用、侧边栏、广告、导航条，以及其他类似的有区别于主要内容的部分。</p>
+<h4 id="nav元素"><a href="#nav元素" class="headerlink" title="nav元素"></a><code>nav</code>元素</h4><p><code>nav</code>元素是一个可以用作页面导航的连接组，其中的导航元素链接到其他页面或当前页面的其他部分。并不是所有连接组都要被放进<code>nav</code>元素，只需要将主要的、基本的连接组放进<code>nav</code>元素即可。</p>
+<ul>
+<li>传统导航条</li>
+<li>侧边栏导航</li>
+<li>页内导航</li>
+<li>翻页操作</li>
+</ul>
+<h4 id="section元素"><a href="#section元素" class="headerlink" title="section元素"></a><code>section</code>元素</h4><p><code>section</code>元素用于对网站或应用程序中页面上的内容进行分块。一个<code>section</code>元素通常由内容及其标题组成。但<code>section</code>元素并非一个普通的容器元素；当一个容器需要被直接定义样式或通过脚本定义行为时，推荐使用<code>div</code>而非<code>section</code>元素。</p>
+<ul>
+<li>不要将<code>section</code>元素作为设置样式的页面容器。</li>
+<li>如果<code>article</code>元素、<code>aside</code>元素、<code>nav</code>元素更符合使用条件，那不要使用<code>section</code>元素。</li>
+<li>没有标题内容，不要使用<code>section</code>元素。</li>
+</ul>
+<h4 id="time元素与微格式"><a href="#time元素与微格式" class="headerlink" title="time元素与微格式"></a><code>time</code>元素与微格式</h4><ul>
+<li>微格式：利用<code>class</code>属性来对页面添加附加信息的方法，附加信息例如新闻事件发生的日期和时间，个人电话号码、企业邮箱等。</li>
+<li>time元素：代表24小时中某个时刻或时间，允许时差，例<code>&lt;time datetime=&quot;2016-4-26T21:36&quot;&gt;2016年4月26号晚上9点36&lt;time&gt;</code></li>
+<li><code>pubdate</code>属性：是一个可选的、<code>boolean</code>值的属性，可以用到<code>article</code>元素中的<code>time</code>元素上，意思是<code>time</code>元素代表了文章（<code>article</code>元素的内容）或整个网页的发布时间；例<code>&lt;time datetime=&quot;2016-4-26&quot; pubdate&gt;2016年4月26号&lt;time&gt;</code></li>
+</ul>
+<h4 id="address元素"><a href="#address元素" class="headerlink" title="address元素"></a><code>address</code>元素</h4><p><code>address</code>元素用来在文档中呈现联系信息，包括文档作者或文档维护着的名字，他们的网站链接、电子邮箱、真实地址、电话号码等。<code>address</code>应该不止用来呈现电子邮箱或真实地址，还用来展示跟文档相关的联系人的所有联系信息。</p>
+<h4 id="footer元素"><a href="#footer元素" class="headerlink" title="footer元素"></a><code>footer</code>元素</h4><p><code>footer</code>元素可以作为其上层父级内容区块或是一个根区块的脚注。<code>footer</code>通常包括其相关区块的脚注信息，如作者、相关阅读链接及版权信息。</p>
+<h4 id="hgroup元素"><a href="#hgroup元素" class="headerlink" title="hgroup元素"></a><code>hgroup</code>元素</h4><p><code>hgroup</code>元素是将标题及其子标题进行分组的元素。<code>hgroup</code>元素通常会将<code>h1--h6</code>元素进行分组，譬如一个内容区块的标题及其子元素算一组。</p>
+]]></content>
+      <tags>
+        <tag>web前端</tag>
+      </tags>
+  </entry>
 </search>
