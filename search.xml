@@ -357,15 +357,68 @@
       </tags>
   </entry>
   <entry>
+    <title>web前端</title>
+    <url>/post/b49262eb.html</url>
+    <content><![CDATA[<h4 id="article元素"><a href="#article元素" class="headerlink" title="article元素"></a><code>article</code>元素</h4><ul>
+<li><code>article</code>元素代表文档、页面或应用程序中独立的、完整的、可以独自被外部引用的内容。它可以是一篇博客或者报刊中的文章，一片论坛帖子、一段用户评论或独立的插件，或其他任何独立的内容。</li>
+<li><code>article</code>元素是可以嵌套使用的。</li>
+<li><code>article</code>元素可以用来表示插件。</li>
+</ul>
+<h4 id="aside元素"><a href="#aside元素" class="headerlink" title="aside元素"></a><code>aside</code>元素</h4><p><code>aside</code>元素用来表示当前页面或文章的附属信息部分，它可以包含与当前页面或主要内容相关的引用、侧边栏、广告、导航条，以及其他类似的有区别于主要内容的部分。</p>
+<h4 id="nav元素"><a href="#nav元素" class="headerlink" title="nav元素"></a><code>nav</code>元素</h4><p><code>nav</code>元素是一个可以用作页面导航的连接组，其中的导航元素链接到其他页面或当前页面的其他部分。并不是所有连接组都要被放进<code>nav</code>元素，只需要将主要的、基本的连接组放进<code>nav</code>元素即可。</p>
+<ul>
+<li>传统导航条</li>
+<li>侧边栏导航</li>
+<li>页内导航</li>
+<li>翻页操作</li>
+</ul>
+<h4 id="section元素"><a href="#section元素" class="headerlink" title="section元素"></a><code>section</code>元素</h4><p><code>section</code>元素用于对网站或应用程序中页面上的内容进行分块。一个<code>section</code>元素通常由内容及其标题组成。但<code>section</code>元素并非一个普通的容器元素；当一个容器需要被直接定义样式或通过脚本定义行为时，推荐使用<code>div</code>而非<code>section</code>元素。</p>
+<ul>
+<li>不要将<code>section</code>元素作为设置样式的页面容器。</li>
+<li>如果<code>article</code>元素、<code>aside</code>元素、<code>nav</code>元素更符合使用条件，那不要使用<code>section</code>元素。</li>
+<li>没有标题内容，不要使用<code>section</code>元素。</li>
+</ul>
+<h4 id="time元素与微格式"><a href="#time元素与微格式" class="headerlink" title="time元素与微格式"></a><code>time</code>元素与微格式</h4><ul>
+<li>微格式：利用<code>class</code>属性来对页面添加附加信息的方法，附加信息例如新闻事件发生的日期和时间，个人电话号码、企业邮箱等。</li>
+<li><code>time</code>元素：代表24小时中某个时刻或时间，允许时差，例<code>&lt;time datetime=&quot;2016-4-26T21:36&quot;&gt;2016年4月26号晚上9点36&lt;time&gt;</code></li>
+<li><code>pubdate</code>属性：是一个可选的、<code>boolean</code>值的属性，可以用到<code>article</code>元素中的<code>time</code>元素上，意思是<code>time</code>元素代表了文章（<code>article</code>元素的内容）或整个网页的发布时间；例<code>&lt;time datetime=&quot;2016-4-26&quot; pubdate&gt;2016年4月26号&lt;time&gt;</code></li>
+</ul>
+<h4 id="address元素"><a href="#address元素" class="headerlink" title="address元素"></a><code>address</code>元素</h4><p><code>address</code>元素用来在文档中呈现联系信息，包括文档作者或文档维护着的名字，他们的网站链接、电子邮箱、真实地址、电话号码等。<code>address</code>应该不止用来呈现电子邮箱或真实地址，还用来展示跟文档相关的联系人的所有联系信息。</p>
+<h4 id="footer元素"><a href="#footer元素" class="headerlink" title="footer元素"></a><code>footer</code>元素</h4><p><code>footer</code>元素可以作为其上层父级内容区块或是一个根区块的脚注。<code>footer</code>通常包括其相关区块的脚注信息，如作者、相关阅读链接及版权信息。</p>
+<h4 id="hgroup元素"><a href="#hgroup元素" class="headerlink" title="hgroup元素"></a><code>hgroup</code>元素</h4><p><code>hgroup</code>元素是将标题及其子标题进行分组的元素。<code>hgroup</code>元素通常会将<code>h1--h6</code>元素进行分组，譬如一个内容区块的标题及其子元素算一组。</p>
+<h4 id="header元素"><a href="#header元素" class="headerlink" title="header元素"></a><code>header</code>元素</h4><p><code>header</code>元素是一种具有引导和导航作用的结构元素，通常用来放置整个页面或页面内的一个内容区块的标题，但是也可以包含其他内容，例如数据表格、搜索表单或相关的<code>logo</code>图片。</p>
+<h4 id="表单内元素的form属性"><a href="#表单内元素的form属性" class="headerlink" title="表单内元素的form属性"></a>表单内元素的<code>form</code>属性</h4><p>在<code>HTML4</code>中，表单内的从属性元素必须书写在表单内部，而在<code>HTML5</code>中，可以把他们书写在页面上任何地方，然后为该元素指定一个<code>form</code>属性，属性值为该表单的<code>id</code>，这样就可以声明该元素从属于指定表单了。</p>
+<h4 id="表单内元素的formaction属性"><a href="#表单内元素的formaction属性" class="headerlink" title="表单内元素的formaction属性"></a>表单内元素的<code>formaction</code>属性</h4><p>在<code>HTML4</code>中，一个表单内所有元素只能通过表单的<code>action</code>属性被统一提交到另一个页面，而在<code>HTML5</code>中可以为所有的提交按钮，增加不同的<code>formaction</code>属性，使单击不同的按钮时可以将表单提交到不同的页面。</p>
+<h4 id="表单内元素的formmethod属性"><a href="#表单内元素的formmethod属性" class="headerlink" title="表单内元素的formmethod属性"></a>表单内元素的<code>formmethod</code>属性</h4><p>在<code>HTML4</code>中，一个表单内只能有一个<code>action</code>属性用来对表单内所有元素统一指定提交页面，所以每个表单内页面只有一个<code>method</code>属性来统一指定提交方法。</p>
+<p>在<code>HTML5</code>中，可以使用<code>formmethod</code>属性来对每一个表单元素分别指定不同的提交方法。</p>
+<h4 id="表单内元素的formenctype属性"><a href="#表单内元素的formenctype属性" class="headerlink" title="表单内元素的formenctype属性"></a>表单内元素的<code>formenctype</code>属性</h4><p>在<code>HTML4</code>中，表单元素具有一个<code>entype</code>属性，该属性用于指定在表单发送到服务器之前应该如何对表单内的数据进行编码。在<code>HTML5</code>中，可以使用<code>formenctype</code>属性对表单元素分别指定不同的编码方式。</p>
+<h4 id="表单内元素的formtarget属性"><a href="#表单内元素的formtarget属性" class="headerlink" title="表单内元素的formtarget属性"></a>表单内元素的<code>formtarget</code>属性</h4><p>在<code>HTML4</code>中，表单元素具有一个<code>target</code>属性，该属性用于指定在何处打开表单提交后所需加载的页面。</p>
+<p>在<code>HTML5</code>中，可以对多个提交按钮分别使用<code>formtarget</code>属性来指定提交后在何处打开所需加载的页面。</p>
+<h4 id="表单内元素的autofocus属性"><a href="#表单内元素的autofocus属性" class="headerlink" title="表单内元素的autofocus属性"></a>表单内元素的<code>autofocus</code>属性</h4><p>为文本框、选择框或按钮控件加上<code>autofocus</code>属性，当画面打开时，该控件自动获得光标焦点。</p>
+<h4 id="表单内元素得required属性"><a href="#表单内元素得required属性" class="headerlink" title="表单内元素得required属性"></a>表单内元素得<code>required</code>属性</h4><p><code>HTML5</code>中新增的<code>required</code>属性可以应用在大多数输入元素上，在提交时，如果元素中内容为空白，则不允许提交，同时在浏览器中显示信息提示文字。</p>
+<h4 id="表单内元素得labels"><a href="#表单内元素得labels" class="headerlink" title="表单内元素得labels"></a>表单内元素得<code>labels</code></h4><p>在<code>HTML5</code>中，为所有可使用标签得表单元素、<code>button</code>、<code>select</code>元素等，定义一个<code>labels</code>属性，属性值为<code>NodeList</code>对象，代表该元素所绑定得标签元素所构成的集合。</p>
+<h4 id="标签的control属性"><a href="#标签的control属性" class="headerlink" title="标签的control属性"></a>标签的<code>control</code>属性</h4><p>在<code>HTML5</code>中，可以在标签内部放置一个表单元素，并且通过该标签的<code>control</code>属性来访问该表单元素。</p>
+<h4 id="文本框的placeholder属性"><a href="#文本框的placeholder属性" class="headerlink" title="文本框的placeholder属性"></a>文本框的<code>placeholder</code>属性</h4><p><code>placeholder</code>是指当文本框处于未输入状态时显示的输入提示。当文本框处于未输入状态且未获取光标焦点时，迷糊显示输入提示文字。</p>
+<h4 id="复选框的indeterminate属性"><a href="#复选框的indeterminate属性" class="headerlink" title="复选框的indeterminate属性"></a>复选框的<code>indeterminate</code>属性</h4><p>对于复选框<code>checkbox</code>元素来说，过去只是选取与非选取这两种状态。在<code>HTML5</code>中，可以<code>JavaScript</code>脚本代码中对该元素使用<code>indeterminate</code>属性，以说明复选框处于“尚未明确是否选取”状态。</p>
+<h4 id="image提交按钮的height属性与width属性"><a href="#image提交按钮的height属性与width属性" class="headerlink" title="image提交按钮的height属性与width属性"></a><code>image</code>提交按钮的<code>height</code>属性与<code>width</code>属性</h4><p>针对类型为<code>image</code>的<code>input</code>元素，<code>HTML5</code>新增了两个属性，<code>height</code>、<code>width</code>分别用来指定图片按钮的高度和宽度。</p>
+<h4 id="文本框的list属性"><a href="#文本框的list属性" class="headerlink" title="文本框的list属性"></a>文本框的<code>list</code>属性</h4><p>在<code>HTML5</code>中，为单行文本框增加了一个<code>list</code>属性，该属性的值为某个<code>datalist</code>元素的<code>id</code>。<code>datalist</code>元素也是<code>HTML5</code>中新增的元素，该元素类似于选择框，但是当用户想要设定的值不在选择列表之内时，允许自行输入。<code>datalist</code>元素本身并不显示，而是当文本框获得焦点时以提示输入的方式显示。</p>
+<h4 id="文本框的autocomplete属性"><a href="#文本框的autocomplete属性" class="headerlink" title="文本框的autocomplete属性"></a>文本框的<code>autocomplete</code>属性</h4><p>帮助输入用户的自动完成功能，是一个既节省输入事件又十分方便的功能。在<code>HTML5</code>之前，因为谁都可以看见输入的值，所有在安全方面存在缺陷，只要使用<code>AutoComplete</code>属性，安全性方面也可以得到很好的控制。</p>
+<h4 id="文本框的pattern属性"><a href="#文本框的pattern属性" class="headerlink" title="文本框的pattern属性"></a>文本框的<code>pattern</code>属性</h4><p>在<code>HTML5</code>中，对<code>input</code>元素使用<code>pattern</code>属性，并且将属性值设为某个格式的正则表达式，在提交时会针对这些进行检查，检查其内容是否符合给定格式。当输入的内容不符合给定格式时，则不允许提交，同时在浏览器中显示信息提示文字，提示输入的内容必须符合给定格式。</p>
+<h4 id="文本框的selectiondirection属性"><a href="#文本框的selectiondirection属性" class="headerlink" title="文本框的selectiondirection属性"></a>文本框的<code>selectiondirection</code>属性</h4><p>这对<code>input</code>元素与<code>textarea</code>元素，<code>HTML5</code>增加了<code>selectiondirection</code>属性。当用户在这两个元素中用鼠标选取部分文字时，可以使用该属性来获取选取方向。当用户正向选取文字时，该属性值为<code>“forward”，当用户方向选取文字时，该</code>属性值为<code>“backward”</code>。当用户没有选取任何文字时，该属性值为<code>“forward”</code>。</p>
+]]></content>
+      <tags>
+        <tag>web前端</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Java教程</title>
     <url>/post/cf5ee103.html</url>
     <content><![CDATA[<h4 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h4><p>本博客仅用于个人学习分享，文章内容源于网络整理与个人总结，如有侵权，请联系本人删除！</p>
-<h4 id="Java"><a href="#Java" class="headerlink" title="Java"></a>Java</h4><p><code>Java</code>是一门面向对象编程语言，不仅吸收了C++语言的各种优点，还摒弃了<code>C++</code>里难以理解的多继承、指针等概念，因此Java语言具有功能强大和简单易用两个特征。</p>
-<h5 id="Java简介"><a href="#Java简介" class="headerlink" title="Java简介"></a>Java简介</h5><ul>
+<h4 id="Java简介"><a href="#Java简介" class="headerlink" title="Java简介"></a>Java简介</h4><ul>
 <li><code>Java</code> 是由<code>Sun Microsystems</code>公司于1995年5月推出的高级程序设计语言。</li>
 <li><code>Java</code>可运行于多个平台，如<code>Windows</code>, Mac OS，及其他多种<code>UNIX</code>版本的系统。</li>
 </ul>
-<h5 id="Java主要特性："><a href="#Java主要特性：" class="headerlink" title="Java主要特性："></a><code>Java</code>主要特性：</h5><ul>
+<h5 id="Java主要特性"><a href="#Java主要特性" class="headerlink" title="Java主要特性"></a><code>Java</code>主要特性</h5><ul>
 <li><code>Java</code>语言是简单的</li>
 <li><code>Java</code>语言是面向对象的</li>
 <li><code>Java</code>语言是分布式的</li>
@@ -442,63 +495,190 @@
 <p><a href="https://imgchr.com/i/D6pZy6"><img src="https://s3.ax1x.com/2020/11/28/D6pZy6.png"></a></p>
 <p><a href="https://imgchr.com/i/D6p8SI"><img src="https://s3.ax1x.com/2020/11/28/D6p8SI.png"></a></p>
 <p><a href="https://imgchr.com/i/D6p1fA"><img src="https://s3.ax1x.com/2020/11/28/D6p1fA.png"></a></p>
+<h4 id="常用DOS命令"><a href="#常用DOS命令" class="headerlink" title="常用DOS命令"></a>常用<code>DOS</code>命令</h4><h5 id="打开命令提示符窗口"><a href="#打开命令提示符窗口" class="headerlink" title="打开命令提示符窗口"></a>打开命令提示符窗口</h5><ul>
+<li>按下<code>Win + R</code></li>
+<li>输入<code>cmd</code></li>
+<li>按下回车键（<code>Enter</code>）</li>
+</ul>
+<p><a href="https://imgchr.com/i/r090Lq"><img src="https://s3.ax1x.com/2020/12/21/r090Lq.png"></a></p>
+<h5 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h5><table>
+<thead>
+<tr>
+<th align="center">操作</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">盘符名称：</td>
+<td align="center">盘符切换。<code>E:</code>回车，表示切换到E盘。</td>
+</tr>
+<tr>
+<td align="center"><code>dir</code></td>
+<td align="center">查看当前路径下的内容。</td>
+</tr>
+<tr>
+<td align="center"><code>cd</code> 目录</td>
+<td align="center">进入单级目录。<code>cd byx</code></td>
+</tr>
+<tr>
+<td align="center"><code>cd..</code></td>
+<td align="center">回退到上一级目录<code>。</code></td>
+</tr>
+<tr>
+<td align="center"><code>cd</code> 目录1<code>\</code>目录2<code>\</code>..</td>
+<td align="center">进入多级目录。<code>cd byx\JavaEE</code></td>
+</tr>
+<tr>
+<td align="center"><code>cd\</code></td>
+<td align="center">回退到盘符目录。</td>
+</tr>
+<tr>
+<td align="center"><code>exit</code></td>
+<td align="center">退出命令提示符窗口。</td>
+</tr>
+<tr>
+<td align="center"><code>cls</code></td>
+<td align="center">清屏。</td>
+</tr>
+</tbody></table>
+<h4 id="Java基础语法"><a href="#Java基础语法" class="headerlink" title="Java基础语法"></a><code>Java</code>基础语法</h4><h5 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h5><h6 id="注释概述"><a href="#注释概述" class="headerlink" title="注释概述"></a>注释概述</h6><ul>
+<li>注释是在程序指定位置添加的说明性信息</li>
+<li>注释不参与程序运行，仅起到说明作用</li>
+</ul>
+<h6 id="注释分类"><a href="#注释分类" class="headerlink" title="注释分类"></a>注释分类</h6><ul>
+<li>单行注释—-格式：//注释信息</li>
+<li>多行注释—-<code>/*注释信息*/</code></li>
+<li>文档注释—-<code>/**</code>注释信息<code>**/</code></li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">	Java程序中最基本的组成单位是类。</span></span><br><span class="line"><span class="comment">	类的定义格式：</span></span><br><span class="line"><span class="comment">		public class 类名&#123;</span></span><br><span class="line"><span class="comment">			</span></span><br><span class="line"><span class="comment">		&#125;</span></span><br><span class="line"><span class="comment">		这是我定义的HelloWorld类</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloWorld</span> </span>&#123;</span><br><span class="line">	<span class="comment">/*</span></span><br><span class="line"><span class="comment">		这是main方法</span></span><br><span class="line"><span class="comment">		main方法是程序入口方法，代码执行是从main方法开始的</span></span><br><span class="line"><span class="comment">	*/</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">		<span class="comment">//这是输出语句，&quot;&quot;里面的内容是可以改变的</span></span><br><span class="line">		System.out.println(<span class="string">&quot;HelloWorld&quot;</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="关键字"><a href="#关键字" class="headerlink" title="关键字"></a>关键字</h5><h6 id="关键字概述"><a href="#关键字概述" class="headerlink" title="关键字概述"></a>关键字概述</h6><p>关键字：就是被<code>Java</code>语言赋予了特定含义的单词。</p>
+<h6 id="关键字的特点"><a href="#关键字的特点" class="headerlink" title="关键字的特点"></a>关键字的特点</h6><ul>
+<li>关键字的字母全部小写</li>
+<li>常用的代码编辑器，针对关键字有特殊的颜色标记，非常直观。</li>
+</ul>
+<p><a href="https://imgchr.com/i/r096FU"><img src="https://s3.ax1x.com/2020/12/21/r096FU.png"></a></p>
+<h5 id="常量"><a href="#常量" class="headerlink" title="常量"></a>常量</h5><h6 id="常量概述"><a href="#常量概述" class="headerlink" title="常量概述"></a>常量概述</h6><p>常量：在程序运行过程中，其值不可以发生改变的量。</p>
+<h6 id="常量分类"><a href="#常量分类" class="headerlink" title="常量分类"></a>常量分类</h6><table>
+<thead>
+<tr>
+<th align="center">常量类型</th>
+<th align="center">说明</th>
+<th align="center">举例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">字符串常量</td>
+<td align="center">用双引号括起来的内容</td>
+<td align="center"><code>“HelloWorld”</code></td>
+</tr>
+<tr>
+<td align="center">整数常量</td>
+<td align="center">不带小数的数字</td>
+<td align="center">666</td>
+</tr>
+<tr>
+<td align="center">小数常量</td>
+<td align="center">带小数的数字</td>
+<td align="center">13.14</td>
+</tr>
+<tr>
+<td align="center">字符常量</td>
+<td align="center">用单引号括起来的内容</td>
+<td align="center"><code>‘A’</code></td>
+</tr>
+<tr>
+<td align="center">布尔常量</td>
+<td align="center">布尔值，表示真假</td>
+<td align="center">只有两个值：<code>true，false</code></td>
+</tr>
+<tr>
+<td align="center">空常量</td>
+<td align="center">一个特殊的值，空值</td>
+<td align="center">值是：<code>null</code></td>
+</tr>
+</tbody></table>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloWorld</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;	</span><br><span class="line">		<span class="comment">//字符串常量</span></span><br><span class="line">		System.out.println(<span class="string">&quot;HelloWorld&quot;</span>);</span><br><span class="line">		<span class="comment">//整数常量</span></span><br><span class="line">		System.out.println(<span class="number">666</span>);</span><br><span class="line">		<span class="comment">//小数常量</span></span><br><span class="line">		System.out.println(<span class="number">13.14</span>);</span><br><span class="line">		<span class="comment">//字符常量</span></span><br><span class="line">		System.out.println(<span class="string">&#x27;A&#x27;</span>);</span><br><span class="line">		<span class="comment">//布尔常量</span></span><br><span class="line">		System.out.println(<span class="keyword">true</span>);</span><br><span class="line">		<span class="comment">//空常量,不能直接输出</span></span><br><span class="line">		<span class="comment">//System.out.println(null);</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h5><h6 id="计算机存储单元"><a href="#计算机存储单元" class="headerlink" title="计算机存储单元"></a>计算机存储单元</h6><p>计算机存储设备的最小信息单元叫“位（<code>bit</code>）”，称为“比特位”，通常用小写字母“<code>b</code>”表示。而计算机中最小的存储单元叫“字节（<code>byte</code>）”，通常用大写字母“<code>B</code>”表示，字节由连续的8个位组成。</p>
+<ul>
+<li><code>1B(字节) = 8bit</code></li>
+<li><code>1KB = 1024B</code></li>
+<li><code>1MB = 1024KB</code></li>
+<li><code>1GB = 1024MB</code></li>
+<li><code>1TB = 1024GB</code></li>
+</ul>
+<h6 id="数据类型-1"><a href="#数据类型-1" class="headerlink" title="数据类型"></a>数据类型</h6><p><code>Java</code>语言是强类型语言，对于每一种数据都给出了明确的数据类型，不同的数据类型也分配了不同的内存空间，所以他们表示的数据大小也是不一样的。</p>
+<p><a href="https://imgchr.com/i/r0k8PK"><img src="https://s3.ax1x.com/2020/12/21/r0k8PK.png"></a></p>
+<h6 id="数据类型内存占用和取值范围"><a href="#数据类型内存占用和取值范围" class="headerlink" title="数据类型内存占用和取值范围"></a>数据类型内存占用和取值范围</h6><table>
+<thead>
+<tr>
+<th align="center">数据类型</th>
+<th align="center">关键字</th>
+<th align="center">内存占用</th>
+<th align="center">取值范围</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">整数</td>
+<td align="center">byte</td>
+<td align="center">1</td>
+<td align="center">-128~127</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">2</td>
+<td align="center">-32768~32767</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">4</td>
+<td align="center">-2的31次方到2的31次方-1</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">8</td>
+<td align="center">-2的63次方到2的63次方-1</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">4</td>
+<td align="center">负数：-3.402823E+38到-1.401298E-45</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">正数：1.401298E-45到3.402823E+38</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">8</td>
+<td align="center">负数</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">2</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">1</td>
+<td align="center"></td>
+</tr>
+</tbody></table>
 ]]></content>
       <tags>
         <tag>Java</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>web前端</title>
-    <url>/post/b49262eb.html</url>
-    <content><![CDATA[<h4 id="article元素"><a href="#article元素" class="headerlink" title="article元素"></a><code>article</code>元素</h4><ul>
-<li><code>article</code>元素代表文档、页面或应用程序中独立的、完整的、可以独自被外部引用的内容。它可以是一篇博客或者报刊中的文章，一片论坛帖子、一段用户评论或独立的插件，或其他任何独立的内容。</li>
-<li><code>article</code>元素是可以嵌套使用的。</li>
-<li><code>article</code>元素可以用来表示插件。</li>
-</ul>
-<h4 id="aside元素"><a href="#aside元素" class="headerlink" title="aside元素"></a><code>aside</code>元素</h4><p><code>aside</code>元素用来表示当前页面或文章的附属信息部分，它可以包含与当前页面或主要内容相关的引用、侧边栏、广告、导航条，以及其他类似的有区别于主要内容的部分。</p>
-<h4 id="nav元素"><a href="#nav元素" class="headerlink" title="nav元素"></a><code>nav</code>元素</h4><p><code>nav</code>元素是一个可以用作页面导航的连接组，其中的导航元素链接到其他页面或当前页面的其他部分。并不是所有连接组都要被放进<code>nav</code>元素，只需要将主要的、基本的连接组放进<code>nav</code>元素即可。</p>
-<ul>
-<li>传统导航条</li>
-<li>侧边栏导航</li>
-<li>页内导航</li>
-<li>翻页操作</li>
-</ul>
-<h4 id="section元素"><a href="#section元素" class="headerlink" title="section元素"></a><code>section</code>元素</h4><p><code>section</code>元素用于对网站或应用程序中页面上的内容进行分块。一个<code>section</code>元素通常由内容及其标题组成。但<code>section</code>元素并非一个普通的容器元素；当一个容器需要被直接定义样式或通过脚本定义行为时，推荐使用<code>div</code>而非<code>section</code>元素。</p>
-<ul>
-<li>不要将<code>section</code>元素作为设置样式的页面容器。</li>
-<li>如果<code>article</code>元素、<code>aside</code>元素、<code>nav</code>元素更符合使用条件，那不要使用<code>section</code>元素。</li>
-<li>没有标题内容，不要使用<code>section</code>元素。</li>
-</ul>
-<h4 id="time元素与微格式"><a href="#time元素与微格式" class="headerlink" title="time元素与微格式"></a><code>time</code>元素与微格式</h4><ul>
-<li>微格式：利用<code>class</code>属性来对页面添加附加信息的方法，附加信息例如新闻事件发生的日期和时间，个人电话号码、企业邮箱等。</li>
-<li><code>time</code>元素：代表24小时中某个时刻或时间，允许时差，例<code>&lt;time datetime=&quot;2016-4-26T21:36&quot;&gt;2016年4月26号晚上9点36&lt;time&gt;</code></li>
-<li><code>pubdate</code>属性：是一个可选的、<code>boolean</code>值的属性，可以用到<code>article</code>元素中的<code>time</code>元素上，意思是<code>time</code>元素代表了文章（<code>article</code>元素的内容）或整个网页的发布时间；例<code>&lt;time datetime=&quot;2016-4-26&quot; pubdate&gt;2016年4月26号&lt;time&gt;</code></li>
-</ul>
-<h4 id="address元素"><a href="#address元素" class="headerlink" title="address元素"></a><code>address</code>元素</h4><p><code>address</code>元素用来在文档中呈现联系信息，包括文档作者或文档维护着的名字，他们的网站链接、电子邮箱、真实地址、电话号码等。<code>address</code>应该不止用来呈现电子邮箱或真实地址，还用来展示跟文档相关的联系人的所有联系信息。</p>
-<h4 id="footer元素"><a href="#footer元素" class="headerlink" title="footer元素"></a><code>footer</code>元素</h4><p><code>footer</code>元素可以作为其上层父级内容区块或是一个根区块的脚注。<code>footer</code>通常包括其相关区块的脚注信息，如作者、相关阅读链接及版权信息。</p>
-<h4 id="hgroup元素"><a href="#hgroup元素" class="headerlink" title="hgroup元素"></a><code>hgroup</code>元素</h4><p><code>hgroup</code>元素是将标题及其子标题进行分组的元素。<code>hgroup</code>元素通常会将<code>h1--h6</code>元素进行分组，譬如一个内容区块的标题及其子元素算一组。</p>
-<h4 id="header元素"><a href="#header元素" class="headerlink" title="header元素"></a><code>header</code>元素</h4><p><code>header</code>元素是一种具有引导和导航作用的结构元素，通常用来放置整个页面或页面内的一个内容区块的标题，但是也可以包含其他内容，例如数据表格、搜索表单或相关的<code>logo</code>图片。</p>
-<h4 id="表单内元素的form属性"><a href="#表单内元素的form属性" class="headerlink" title="表单内元素的form属性"></a>表单内元素的<code>form</code>属性</h4><p>在<code>HTML4</code>中，表单内的从属性元素必须书写在表单内部，而在<code>HTML5</code>中，可以把他们书写在页面上任何地方，然后为该元素指定一个<code>form</code>属性，属性值为该表单的<code>id</code>，这样就可以声明该元素从属于指定表单了。</p>
-<h4 id="表单内元素的formaction属性"><a href="#表单内元素的formaction属性" class="headerlink" title="表单内元素的formaction属性"></a>表单内元素的<code>formaction</code>属性</h4><p>在<code>HTML4</code>中，一个表单内所有元素只能通过表单的<code>action</code>属性被统一提交到另一个页面，而在<code>HTML5</code>中可以为所有的提交按钮，增加不同的<code>formaction</code>属性，使单击不同的按钮时可以将表单提交到不同的页面。</p>
-<h4 id="表单内元素的formmethod属性"><a href="#表单内元素的formmethod属性" class="headerlink" title="表单内元素的formmethod属性"></a>表单内元素的<code>formmethod</code>属性</h4><p>在<code>HTML4</code>中，一个表单内只能有一个<code>action</code>属性用来对表单内所有元素统一指定提交页面，所以每个表单内页面只有一个<code>method</code>属性来统一指定提交方法。</p>
-<p>在<code>HTML5</code>中，可以使用<code>formmethod</code>属性来对每一个表单元素分别指定不同的提交方法。</p>
-<h4 id="表单内元素的formenctype属性"><a href="#表单内元素的formenctype属性" class="headerlink" title="表单内元素的formenctype属性"></a>表单内元素的<code>formenctype</code>属性</h4><p>在<code>HTML4</code>中，表单元素具有一个<code>entype</code>属性，该属性用于指定在表单发送到服务器之前应该如何对表单内的数据进行编码。在<code>HTML5</code>中，可以使用<code>formenctype</code>属性对表单元素分别指定不同的编码方式。</p>
-<h4 id="表单内元素的formtarget属性"><a href="#表单内元素的formtarget属性" class="headerlink" title="表单内元素的formtarget属性"></a>表单内元素的<code>formtarget</code>属性</h4><p>在<code>HTML4</code>中，表单元素具有一个<code>target</code>属性，该属性用于指定在何处打开表单提交后所需加载的页面。</p>
-<p>在<code>HTML5</code>中，可以对多个提交按钮分别使用<code>formtarget</code>属性来指定提交后在何处打开所需加载的页面。</p>
-<h4 id="表单内元素的autofocus属性"><a href="#表单内元素的autofocus属性" class="headerlink" title="表单内元素的autofocus属性"></a>表单内元素的<code>autofocus</code>属性</h4><p>为文本框、选择框或按钮控件加上<code>autofocus</code>属性，当画面打开时，该控件自动获得光标焦点。</p>
-<h4 id="表单内元素得required属性"><a href="#表单内元素得required属性" class="headerlink" title="表单内元素得required属性"></a>表单内元素得<code>required</code>属性</h4><p><code>HTML5</code>中新增的<code>required</code>属性可以应用在大多数输入元素上，在提交时，如果元素中内容为空白，则不允许提交，同时在浏览器中显示信息提示文字。</p>
-<h4 id="表单内元素得labels"><a href="#表单内元素得labels" class="headerlink" title="表单内元素得labels"></a>表单内元素得<code>labels</code></h4><p>在<code>HTML5</code>中，为所有可使用标签得表单元素、<code>button</code>、<code>select</code>元素等，定义一个<code>labels</code>属性，属性值为<code>NodeList</code>对象，代表该元素所绑定得标签元素所构成的集合。</p>
-<h4 id="标签的control属性"><a href="#标签的control属性" class="headerlink" title="标签的control属性"></a>标签的<code>control</code>属性</h4><p>在<code>HTML5</code>中，可以在标签内部放置一个表单元素，并且通过该标签的<code>control</code>属性来访问该表单元素。</p>
-<h4 id="文本框的placeholder属性"><a href="#文本框的placeholder属性" class="headerlink" title="文本框的placeholder属性"></a>文本框的<code>placeholder</code>属性</h4><p><code>placeholder</code>是指当文本框处于未输入状态时显示的输入提示。当文本框处于未输入状态且未获取光标焦点时，迷糊显示输入提示文字。</p>
-<h4 id="复选框的indeterminate属性"><a href="#复选框的indeterminate属性" class="headerlink" title="复选框的indeterminate属性"></a>复选框的<code>indeterminate</code>属性</h4><p>对于复选框<code>checkbox</code>元素来说，过去只是选取与非选取这两种状态。在<code>HTML5</code>中，可以<code>JavaScript</code>脚本代码中对该元素使用<code>indeterminate</code>属性，以说明复选框处于“尚未明确是否选取”状态。</p>
-<h4 id="image提交按钮的height属性与width属性"><a href="#image提交按钮的height属性与width属性" class="headerlink" title="image提交按钮的height属性与width属性"></a><code>image</code>提交按钮的<code>height</code>属性与<code>width</code>属性</h4><p>针对类型为<code>image</code>的<code>input</code>元素，<code>HTML5</code>新增了两个属性，<code>height</code>、<code>width</code>分别用来指定图片按钮的高度和宽度。</p>
-<h4 id="文本框的list属性"><a href="#文本框的list属性" class="headerlink" title="文本框的list属性"></a>文本框的<code>list</code>属性</h4><p>在<code>HTML5</code>中，为单行文本框增加了一个<code>list</code>属性，该属性的值为某个<code>datalist</code>元素的<code>id</code>。<code>datalist</code>元素也是<code>HTML5</code>中新增的元素，该元素类似于选择框，但是当用户想要设定的值不在选择列表之内时，允许自行输入。<code>datalist</code>元素本身并不显示，而是当文本框获得焦点时以提示输入的方式显示。</p>
-<h4 id="文本框的autocomplete属性"><a href="#文本框的autocomplete属性" class="headerlink" title="文本框的autocomplete属性"></a>文本框的<code>autocomplete</code>属性</h4><p>帮助输入用户的自动完成功能，是一个既节省输入事件又十分方便的功能。在<code>HTML5</code>之前，因为谁都可以看见输入的值，所有在安全方面存在缺陷，只要使用<code>AutoComplete</code>属性，安全性方面也可以得到很好的控制。</p>
-<h4 id="文本框的pattern属性"><a href="#文本框的pattern属性" class="headerlink" title="文本框的pattern属性"></a>文本框的<code>pattern</code>属性</h4><p>在<code>HTML5</code>中，对<code>input</code>元素使用<code>pattern</code>属性，并且将属性值设为某个格式的正则表达式，在提交时会针对这些进行检查，检查其内容是否符合给定格式。当输入的内容不符合给定格式时，则不允许提交，同时在浏览器中显示信息提示文字，提示输入的内容必须符合给定格式。</p>
-<h4 id="文本框的selectiondirection属性"><a href="#文本框的selectiondirection属性" class="headerlink" title="文本框的selectiondirection属性"></a>文本框的<code>selectiondirection</code>属性</h4><p>这对<code>input</code>元素与<code>textarea</code>元素，<code>HTML5</code>增加了<code>selectiondirection</code>属性。当用户在这两个元素中用鼠标选取部分文字时，可以使用该属性来获取选取方向。当用户正向选取文字时，该属性值为<code>“forward”，当用户方向选取文字时，该</code>属性值为<code>“backward”</code>。当用户没有选取任何文字时，该属性值为<code>“forward”</code>。</p>
-]]></content>
-      <tags>
-        <tag>web前端</tag>
       </tags>
   </entry>
 </search>
