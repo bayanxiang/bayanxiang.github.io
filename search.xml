@@ -623,59 +623,184 @@
 </thead>
 <tbody><tr>
 <td align="center">整数</td>
-<td align="center">byte</td>
+<td align="center"><code>byte</code></td>
 <td align="center">1</td>
 <td align="center">-128~127</td>
 </tr>
 <tr>
 <td align="center"></td>
-<td align="center"></td>
+<td align="center"><code>short</code></td>
 <td align="center">2</td>
 <td align="center">-32768~32767</td>
 </tr>
 <tr>
 <td align="center"></td>
-<td align="center"></td>
+<td align="center"><code>int</code></td>
 <td align="center">4</td>
 <td align="center">-2的31次方到2的31次方-1</td>
 </tr>
 <tr>
 <td align="center"></td>
-<td align="center"></td>
+<td align="center"><code>long</code></td>
 <td align="center">8</td>
 <td align="center">-2的63次方到2的63次方-1</td>
 </tr>
 <tr>
-<td align="center"></td>
-<td align="center"></td>
+<td align="center">浮点数</td>
+<td align="center"><code>float</code></td>
 <td align="center">4</td>
-<td align="center">负数：-3.402823E+38到-1.401298E-45</td>
+<td align="center">负数：-3.402823<code>E</code>+38到-1.401298<code>E</code>-45</td>
 </tr>
 <tr>
 <td align="center"></td>
 <td align="center"></td>
 <td align="center"></td>
-<td align="center">正数：1.401298E-45到3.402823E+38</td>
+<td align="center">正数：1.401298<code>E</code>-45到3.402823<code>E</code>+38</td>
 </tr>
 <tr>
 <td align="center"></td>
-<td align="center"></td>
+<td align="center"><code>double</code></td>
 <td align="center">8</td>
-<td align="center">负数</td>
+<td align="center">负数：-1.797693<code>E</code>+308到-4.9000000<code>E</code>-324</td>
 </tr>
 <tr>
 <td align="center"></td>
 <td align="center"></td>
+<td align="center"></td>
+<td align="center">正数：4.9000000<code>E</code>-324到1.767693<code>E</code>+308</td>
+</tr>
+<tr>
+<td align="center">字符</td>
+<td align="center"><code>char</code></td>
 <td align="center">2</td>
-<td align="center"></td>
+<td align="center">0-65535</td>
 </tr>
 <tr>
-<td align="center"></td>
-<td align="center"></td>
+<td align="center">布尔</td>
+<td align="center"><code>boolean</code></td>
 <td align="center">1</td>
-<td align="center"></td>
+<td align="center"><code>true、false</code></td>
 </tr>
 </tbody></table>
+<p>说明：<code>E</code>+38表示的是乘以10的38次方，同样，E-45表示的是乘以10的负45次方</p>
+<h5 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h5><h6 id="变量概述"><a href="#变量概述" class="headerlink" title="变量概述"></a>变量概述</h6><p>变量：在程序运行过程中，其值可以发生改变的量。</p>
+<p>从本质上讲，变量是内存中一小块区域。</p>
+<h6 id="变量定义"><a href="#变量定义" class="headerlink" title="变量定义"></a>变量定义</h6><ul>
+<li>格式：数据类型变量名 = 变量值；</li>
+<li>范例：<code>int</code> <code>a</code> = 10；</li>
+</ul>
+<h6 id="变量的使用"><a href="#变量的使用" class="headerlink" title="变量的使用"></a>变量的使用</h6><p>变量的使用，取值和修改值</p>
+<ul>
+<li>取值格式：变量名</li>
+<li>范例：<code>a</code></li>
+<li>修改值格式：变量名 = 变量值；</li>
+<li>范例：<code>a</code> = 20;</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">byx</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//定义变量</span></span><br><span class="line">        <span class="keyword">int</span> a = <span class="number">10</span>;</span><br><span class="line">        <span class="comment">//输出变量</span></span><br><span class="line">        System.out.println(a);</span><br><span class="line">        <span class="comment">//修改变量</span></span><br><span class="line">        a = <span class="number">20</span>;</span><br><span class="line">        <span class="comment">//输出修改变量值</span></span><br><span class="line">        System.out.println(a);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h6 id="变量使用的注意事项"><a href="#变量使用的注意事项" class="headerlink" title="变量使用的注意事项"></a>变量使用的注意事项</h6><ul>
+<li>名字不能重复</li>
+<li>变量未赋值，不能使用</li>
+<li><code>long</code>类型的变量定义的时候，为了防止整数过大，后面要加<code>L</code></li>
+<li><code>float</code>类型的变量定义的时候，为了防止类型不兼容，后面要加<code>F</code></li>
+</ul>
+<h5 id="标识符"><a href="#标识符" class="headerlink" title="标识符"></a>标识符</h5><h6 id="标识符概述"><a href="#标识符概述" class="headerlink" title="标识符概述"></a>标识符概述</h6><p>标识符：就是给类、方法、变量等起名字的符号。</p>
+<h6 id="标示符定义规则"><a href="#标示符定义规则" class="headerlink" title="标示符定义规则"></a>标示符定义规则</h6><ul>
+<li>由数字、字母、下划线（_）和美元符（$）组成</li>
+<li>不能以数字开头</li>
+<li>不能是关键字</li>
+<li>区分大小写</li>
+</ul>
+<h6 id="常见命名约定"><a href="#常见命名约定" class="headerlink" title="常见命名约定"></a>常见命名约定</h6><p>小驼峰命名法：根据方法、变量命名</p>
+<ul>
+<li>标识符是一个单词的时候，首字母要小写</li>
+<li>范例：<code>name</code></li>
+<li>标识符由多个单词组成的时候，第一个单词首字母小写，其他单词首字母大写</li>
+<li>范例：<code>firstName</code></li>
+</ul>
+<p>大驼峰命名法：根据类命名</p>
+<ul>
+<li>标识符是一个单词的时候，首字母大写</li>
+<li>范例：<code>Student</code></li>
+<li>标识符由多个单词组成的时候，每个单词的首字母大写</li>
+<li>范例：<code>GoodStudent</code></li>
+</ul>
+<h5 id="类型转换"><a href="#类型转换" class="headerlink" title="类型转换"></a>类型转换</h5><h6 id="类型转换分类"><a href="#类型转换分类" class="headerlink" title="类型转换分类"></a>类型转换分类</h6><ul>
+<li>自动类型转换</li>
+<li>强制类型转换</li>
+</ul>
+<h6 id="自动类型转换"><a href="#自动类型转换" class="headerlink" title="自动类型转换"></a>自动类型转换</h6><p>把一个表示数据范围小的数值或者变量赋值给另一个表示数据范围大的变量</p>
+<ul>
+<li>范例：<code>double</code> <code>d</code> = 10;</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">byx</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//自动类型转换</span></span><br><span class="line">        <span class="keyword">double</span> d = <span class="number">10</span>;</span><br><span class="line">        System.out.println(d);</span><br><span class="line">        <span class="keyword">byte</span> b = <span class="number">10</span>;</span><br><span class="line">        <span class="keyword">short</span> s = b;</span><br><span class="line">        <span class="keyword">int</span> i = b;</span><br><span class="line">        <span class="comment">//类型不兼容</span></span><br><span class="line">        <span class="comment">//char c = b;</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h6 id="强制类型转换"><a href="#强制类型转换" class="headerlink" title="强制类型转换"></a>强制类型转换</h6><p>把一个表示数据范围大的数值或者变量赋值给另一个表示数据范围小的变量</p>
+<ul>
+<li>格式：目标数据类型 变量名 = （目标数据类型）值或者变量；</li>
+<li>范例：<code>int</code> <code>k</code> = (<code>int</code>)88.88;</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">byx</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//强制类型转换</span></span><br><span class="line">        <span class="keyword">int</span> k = (<span class="keyword">int</span>)<span class="number">88.88</span>;</span><br><span class="line">        System.out.println(k);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="算术运算符"><a href="#算术运算符" class="headerlink" title="算术运算符"></a>算术运算符</h5><h6 id="运算符和表达式"><a href="#运算符和表达式" class="headerlink" title="运算符和表达式"></a>运算符和表达式</h6><ul>
+<li><p>运算符：对常量或者变量进行操作的符号</p>
+</li>
+<li><p>表达式：用运算符把常量或者变量连接起来符合<code>java</code>语法的式子就可以称为表达式。不同运算符连接的表达式体现的是不同类型的表达式。</p>
+</li>
+<li><p>举例说明：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> a = <span class="number">10</span>;</span><br><span class="line"><span class="keyword">int</span> b = <span class="number">20</span>;</span><br><span class="line"><span class="keyword">int</span> c = a + b;</span><br></pre></td></tr></table></figure>
+
+<p>+：是运算符，并且是算术运算符</p>
+<p>a + b:是表达式，由于+是算术运算符，所以这个表达式叫算术表达式</p>
+</li>
+</ul>
+<h6 id="算术运算符-1"><a href="#算术运算符-1" class="headerlink" title="算术运算符"></a>算术运算符</h6><table>
+<thead>
+<tr>
+<th align="center">符号</th>
+<th align="center">作用</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">+</td>
+<td align="center">加</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">-</td>
+<td align="center">减</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">*</td>
+<td align="center">乘</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">/</td>
+<td align="center">除</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">%</td>
+<td align="center">取余</td>
+<td align="center">获取的是两个数据做除法的余数</td>
+</tr>
+</tbody></table>
+<p>注意事项：</p>
+<p>/和%的区别：两个数据做除法，/取结果的商，%取结果的余数。整数操作只能得到整数，要想得到小数，必须有浮点数参与运算。</p>
+<h6 id="字符的“-”操作"><a href="#字符的“-”操作" class="headerlink" title="字符的“+”操作"></a>字符的“+”操作</h6><p>拿字符在计算机底层对应的数值来进行计算的</p>
+<p>‘A’  —————-&gt;  65     A—Z是连续的</p>
+<p>‘a’  —————-&gt;  97     a—z是连续的</p>
+<p>‘0’  —————-&gt;  48     0—9是连续的</p>
+<p>算术表达式中包含多个基本数据类型的值的时候，整个算术表达式的类型会自动进行提升。</p>
+<p>提升规则：</p>
+<ul>
+<li><code>byte</code>类型，<code>short</code>类型和<code>char</code>类型将被提升到<code>int</code>类型</li>
+<li>整个表达式的类型自动提升到表达式中最高等级操作数同样的类型</li>
+<li>等级顺序：<code>byte</code>,<code>short</code>,<code>char</code>–&gt;<code>int</code>–&gt;<code>long</code>–&gt;<code>float</code>–&gt;<code>double</code></li>
+</ul>
 ]]></content>
       <tags>
         <tag>Java</tag>
