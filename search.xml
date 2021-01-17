@@ -60,144 +60,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Hexo + GitHub搭建个人博客</title>
-    <url>/post/6e072cbe.html</url>
-    <content><![CDATA[<h4 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h4><p>本博客仅用于个人学习分享，文章内容源于网络整理与个人总结，如有侵权，请联系本人删除！</p>
-<h4 id="环境搭建"><a href="#环境搭建" class="headerlink" title="环境搭建"></a>环境搭建</h4><ul>
-<li><h5 id="Node-js"><a href="#Node-js" class="headerlink" title="Node.js"></a><code>Node.js</code></h5><p><code>Node.js</code>官网下载链接：<a href="https://nodejs.org/en/download/">https://nodejs.org/en/download/</a></p>
-<p><img src="https://s1.ax1x.com/2020/10/13/04pZyn.png"></p>
-</li>
-<li><h5 id="Node-js安装教程：https-www-runoob-com-nodejs-nodejs-tutorial-html"><a href="#Node-js安装教程：https-www-runoob-com-nodejs-nodejs-tutorial-html" class="headerlink" title="Node.js安装教程：https://www.runoob.com/nodejs/nodejs-tutorial.html"></a><code>Node.js</code>安装教程：<a href="https://www.runoob.com/nodejs/nodejs-tutorial.html">https://www.runoob.com/nodejs/nodejs-tutorial.html</a></h5></li>
-<li><h5 id="Git"><a href="#Git" class="headerlink" title="Git"></a><code>Git</code></h5><p><code>Git</code>官网下载链接：<a href="https://git-scm.com/downloads">https://git-scm.com/downloads</a></p>
-<p><img src="https://s1.ax1x.com/2020/10/13/04pGl9.png"></p>
-</li>
-<li><h5 id="Git安装教程：https-www-runoob-com-git-git-tutorial-html"><a href="#Git安装教程：https-www-runoob-com-git-git-tutorial-html" class="headerlink" title="Git安装教程：https://www.runoob.com/git/git-tutorial.html"></a><code>Git</code>安装教程：<a href="https://www.runoob.com/git/git-tutorial.html">https://www.runoob.com/git/git-tutorial.html</a></h5></li>
-</ul>
-<h4 id="环境测试"><a href="#环境测试" class="headerlink" title="环境测试"></a>环境测试</h4><p>搭建完成后，按<code>Win + R</code> 输入 <code>cmd</code> 按回车， 如下图出现程序版本号，即环境搭建完成。</p>
-<ul>
-<li><h5 id="Node测试：node-v"><a href="#Node测试：node-v" class="headerlink" title="Node测试：node -v"></a><code>Node</code>测试：<code>node -v</code></h5></li>
-<li><h5 id="Npm测试：npm-v"><a href="#Npm测试：npm-v" class="headerlink" title="Npm测试：npm -v"></a><code>Npm</code>测试：<code>npm -v</code></h5></li>
-<li><h5 id="Git测试：git-version"><a href="#Git测试：git-version" class="headerlink" title="Git测试：git --version"></a><code>Git</code>测试：<code>git --version</code></h5></li>
-</ul>
-<p><img src="https://s1.ax1x.com/2020/10/13/04PKTP.png"></p>
-<h4 id="Hexo远端部署"><a href="#Hexo远端部署" class="headerlink" title="Hexo远端部署"></a><code>Hexo</code>远端部署</h4><ul>
-<li><h5 id="GitHub注册"><a href="#GitHub注册" class="headerlink" title="GitHub注册"></a><code>GitHub</code>注册</h5><p>登录<a href="https://github.com/">GitHub官网</a>使用邮箱注册，选择免费账户（<code>Free</code>），并完成邮件验证。</p>
-<p>如有账号，直接点击<code>Sin in</code>进入即可！</p>
-</li>
-</ul>
-<p><img src="https://s1.ax1x.com/2020/10/13/04FaGT.png"></p>
-<p>注册完成后，还需要在本地配置一下自己的个人信息，进入博客根目录，<code>右键  -&gt; Git Bash Here</code>，设置用户名和邮箱：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git config --global user.name <span class="string">&quot;GitHub 用户名&quot;</span></span><br><span class="line">$ git config --global user.email <span class="string">&quot;GitHub 邮箱&quot;</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><h5 id="创建-SSH-密匙"><a href="#创建-SSH-密匙" class="headerlink" title="创建 SSH 密匙"></a>创建 SSH 密匙</h5><p>输入<code>ssh-keygen -t rsa -C &quot;GitHub 邮箱&quot;</code>，然后一直按回车。</p>
-</li>
-</ul>
-<p><img src="https://s1.ax1x.com/2020/10/13/04AIUI.png"></p>
-<ul>
-<li><h5 id="添加密钥"><a href="#添加密钥" class="headerlink" title="添加密钥"></a>添加密钥</h5><p>① 进入 <code>[C:\Users\用户名.ssh]</code> 目录（要勾选显示“隐藏的项目”），用记事本打开<code>id_rsa.pub</code> 文件并复制里面的内容。</p>
-</li>
-</ul>
-<p><img src="https://s1.ax1x.com/2020/10/13/04EAr4.png"></p>
-<p>​        ② 登陆<code>GitHub</code>，进入 <code>Settings</code> 页面，选择左边栏的 <code>SSH and GPG keys</code>，点击 <code>New SSH key</code>。</p>
-<p><img src="https://s1.ax1x.com/2020/10/13/04EDsg.png"></p>
-<p>​        ③ <code>Title</code> 随便取个名字，粘贴复制的 <code>id_rsa.pub</code> 内容到 <code>Key</code> 中，点击 <code>Add SSH key</code> 完成添加。</p>
-<ul>
-<li><h5 id="验证连接"><a href="#验证连接" class="headerlink" title="验证连接"></a>验证连接</h5></li>
-</ul>
-<p>进入博客根目录打开 <code>Git Bash</code>，输入 <code>ssh -T git@github.com</code> 出现 <code>“Are you sure……”</code>，输入 <code>yes</code> 回车确认。</p>
-<p>显示 <code>“Hi xxx! You’ve successfully……”</code> 即连接成功。</p>
-<p><img src="https://s1.ax1x.com/2020/10/13/04VhtI.png"></p>
-<ul>
-<li><h5 id="创建GitHub-Pages仓库"><a href="#创建GitHub-Pages仓库" class="headerlink" title="创建GitHub Pages仓库"></a>创建<code>GitHub Pages</code>仓库</h5><p><code>GitHub</code> 主页右上角加号 -&gt; <code>New repository</code>：</p>
-<p>① <code>Repository name</code> 中输入 <code>用户名.github.io</code></p>
-<p>② 勾选 <code>“Initialize this repository with中Add a README file”</code></p>
-<p>③ <code>Description</code> 选填</p>
-<p>④ 填好后点击 <code>Create repository</code> 创建。</p>
-</li>
-</ul>
-<p><img src="https://s1.ax1x.com/2020/10/13/04eSIA.png"></p>
-<p>创建后默认自动启用 <code>HTTPS</code>，博客地址为：<code>https://用户名.github.io</code></p>
-<h4 id="Hexo"><a href="#Hexo" class="headerlink" title="Hexo"></a><code>Hexo</code></h4><ul>
-<li><h5 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装<code>Hexo</code></h5><p>打开新建的<code>Blog</code>文件夹根目录，右键 -&gt; <code>Git Bash Here</code>。</p>
-</li>
-</ul>
-<p>使用 <code>npm</code> 一键安装 <code>Hexo</code> 博客程序：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
-
-<p><a href="https://s1.ax1x.com/2020/07/28/aA6yO1.png"><img src="https://s1.ax1x.com/2020/07/28/aA6yO1.png" alt="Hexo安装成功"></a></p>
-<ul>
-<li><h5 id="Hexo初始化和本地预览"><a href="#Hexo初始化和本地预览" class="headerlink" title="Hexo初始化和本地预览"></a><code>Hexo</code>初始化和本地预览</h5><p>初始化并安装所需组件：</p>
-</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo init      <span class="comment"># 初始化（进行hexo init一定要保证文件夹为空文件夹）</span></span><br><span class="line">npm install    <span class="comment"># 安装组件</span></span><br></pre></td></tr></table></figure>
-
-<p><img src="https://s1.ax1x.com/2020/10/14/04ovon.png"></p>
-<p>完成后依次输入下面命令，启动本地服务器进行预览：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo g   <span class="comment"># 生成页面</span></span><br><span class="line">hexo s   <span class="comment"># 启动预览</span></span><br></pre></td></tr></table></figure>
-
-<p>访问 <code>http://localhost:4000</code>，出现 <code>Hexo</code> 默认页面，本地博客安装成功！</p>
-<p><img src="https://s1.ax1x.com/2020/10/14/04TNfP.png"></p>
-<ul>
-<li><h5 id="部署-Hexo-到-GitHub"><a href="#部署-Hexo-到-GitHub" class="headerlink" title="部署 Hexo 到 GitHub"></a>部署 <code>Hexo</code> 到 <code>GitHub</code></h5><p>进入博客根目录，打开 <code>git bash</code> 输入 <code>npm install hexo-deployer-git --save</code> 命令安装插件:</p>
-</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
-
-<p>然后修改 <code>_config.yml</code> 文件末尾的 <code>Deployment</code> 部分，修改成如下：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  <span class="built_in">type</span>: git</span><br><span class="line">  repository: git@github.com:用户名/用户名.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
-
-<p>完成后先运行<code>hexo clean</code>，在运行 <code>hexo g -d</code> 将网站上传部署到 <code>GitHub</code> 。</p>
-<p>完成！这时访问我们的 <code>GitHub</code> 域名 <code>https://用户名.github.io</code> 就可以看到 <code>Hexo</code> 网站了。</p>
-<ul>
-<li><h5 id="发布博客"><a href="#发布博客" class="headerlink" title="发布博客"></a>发布博客</h5><p>进入博客根目录，右键打开 <code>Git Bash Here</code>，创建博文：</p>
-</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo new <span class="string">&quot;xxxx&quot;</span>  <span class="comment">#新建文章</span></span><br></pre></td></tr></table></figure>
-
-<p>然后 <code>source</code> 文件夹中会出现一个 <code>xxxx.md</code> 文件，就可以使用 <code>Markdown</code> 编辑器，推荐<a href="https://typora.io/">Typora</a>。</p>
-<p>写完后运行下面代码将文章渲染并部署到 <code>GitHub Pages</code> 上完成发布。</p>
-<p>每次发布文章都是顺序执行下面三条命令（建议在本地预览之后在选择部署到<code>GitHub</code>），如在本地预览则把<code>hexo d</code>换为<code>hexo s</code>即可。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo clean   <span class="comment">#清除缓存</span></span><br><span class="line">hexo g       <span class="comment"># 生成页面</span></span><br><span class="line">hexo d       <span class="comment"># 部署发布（hexo s  #启动服务预览）  </span></span><br><span class="line">hexo g -d    <span class="comment">#生成页面部署发布一体化操作</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="Hexo常用命令"><a href="#Hexo常用命令" class="headerlink" title="Hexo常用命令"></a><code>Hexo</code>常用命令</h4><ul>
-<li><h5 id="初始化命令"><a href="#初始化命令" class="headerlink" title="初始化命令"></a>初始化命令</h5></li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install hexo -g      <span class="comment">#全局安装Hexo</span></span><br><span class="line">npm update hexo -g       <span class="comment">#升级 </span></span><br><span class="line">hexo init                <span class="comment">#初始化</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><h5 id="命令简称"><a href="#命令简称" class="headerlink" title="命令简称"></a>命令简称</h5></li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo n <span class="string">&quot;xxxx&quot;</span> = hexo new <span class="string">&quot;xxxx&quot;</span>     <span class="comment">#新建文章</span></span><br><span class="line">hexo g = hexo generate              <span class="comment">#渲染</span></span><br><span class="line">hexo s = hexo server                <span class="comment">#本地预览</span></span><br><span class="line">hexo d = hexo deploy                <span class="comment">#部署</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><h5 id="其他命令"><a href="#其他命令" class="headerlink" title="其他命令"></a>其他命令</h5></li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo server      //Hexo会监视文件变动并自动更新</span><br><span class="line">hexo server -s  //静态模式</span><br><span class="line">hexo server -p xxxx   //更改端口</span><br><span class="line">hexo server -i xxx.xxx.x.x   //自定义 IP</span><br><span class="line">hexo clean   //清除缓存，若是网页正常情况下可以忽略这条命令</span><br></pre></td></tr></table></figure>
-
-<h4 id="踩坑指南"><a href="#踩坑指南" class="headerlink" title="踩坑指南"></a>踩坑指南</h4><ul>
-<li><h5 id="404页面"><a href="#404页面" class="headerlink" title="404页面"></a>404页面</h5><p><img src="https://s1.ax1x.com/2020/10/14/04qZnO.png"></p>
-</li>
-</ul>
-<p>出现404界面的原因：</p>
-<p>① <code>Repository name</code>填写与<code>Owner</code>不一致</p>
-<p>② 勾选<code>Add a README file</code>，默认分支没有设置为<code>master</code></p>
-<p><img src="https://s1.ax1x.com/2020/10/14/04LKqU.png"></p>
-<p>如果<code>Repository name</code>不规范，只需去<code>Settings</code>更改<code>Repository name</code>即可</p>
-<p><img src="https://s1.ax1x.com/2020/10/14/04O80S.png"></p>
-<h4 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h4><ul>
-<li>博客图片不建议本地上传，建议采用<a href="https://imgchr.com/i/04O80S">路过图传</a></li>
-</ul>
-<p><img src="https://s1.ax1x.com/2020/10/14/04xuE8.png"></p>
-<ul>
-<li>所需软件、环境搭建，建议从官网入手</li>
-</ul>
-]]></content>
-      <tags>
-        <tag>Hexo</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Hexo + Next主题美化（基于本博客）</title>
     <url>/post/af96d78a.html</url>
     <content><![CDATA[<h4 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h4><p>本博客仅用于个人学习分享，文章内容源于网络整理与个人总结，如有侵权，请联系本人删除！</p>
@@ -357,6 +219,144 @@
       </tags>
   </entry>
   <entry>
+    <title>Hexo + GitHub搭建个人博客</title>
+    <url>/post/6e072cbe.html</url>
+    <content><![CDATA[<h4 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h4><p>本博客仅用于个人学习分享，文章内容源于网络整理与个人总结，如有侵权，请联系本人删除！</p>
+<h4 id="环境搭建"><a href="#环境搭建" class="headerlink" title="环境搭建"></a>环境搭建</h4><ul>
+<li><h5 id="Node-js"><a href="#Node-js" class="headerlink" title="Node.js"></a><code>Node.js</code></h5><p><code>Node.js</code>官网下载链接：<a href="https://nodejs.org/en/download/">https://nodejs.org/en/download/</a></p>
+<p><img src="https://s1.ax1x.com/2020/10/13/04pZyn.png"></p>
+</li>
+<li><h5 id="Node-js安装教程：https-www-runoob-com-nodejs-nodejs-tutorial-html"><a href="#Node-js安装教程：https-www-runoob-com-nodejs-nodejs-tutorial-html" class="headerlink" title="Node.js安装教程：https://www.runoob.com/nodejs/nodejs-tutorial.html"></a><code>Node.js</code>安装教程：<a href="https://www.runoob.com/nodejs/nodejs-tutorial.html">https://www.runoob.com/nodejs/nodejs-tutorial.html</a></h5></li>
+<li><h5 id="Git"><a href="#Git" class="headerlink" title="Git"></a><code>Git</code></h5><p><code>Git</code>官网下载链接：<a href="https://git-scm.com/downloads">https://git-scm.com/downloads</a></p>
+<p><img src="https://s1.ax1x.com/2020/10/13/04pGl9.png"></p>
+</li>
+<li><h5 id="Git安装教程：https-www-runoob-com-git-git-tutorial-html"><a href="#Git安装教程：https-www-runoob-com-git-git-tutorial-html" class="headerlink" title="Git安装教程：https://www.runoob.com/git/git-tutorial.html"></a><code>Git</code>安装教程：<a href="https://www.runoob.com/git/git-tutorial.html">https://www.runoob.com/git/git-tutorial.html</a></h5></li>
+</ul>
+<h4 id="环境测试"><a href="#环境测试" class="headerlink" title="环境测试"></a>环境测试</h4><p>搭建完成后，按<code>Win + R</code> 输入 <code>cmd</code> 按回车， 如下图出现程序版本号，即环境搭建完成。</p>
+<ul>
+<li><h5 id="Node测试：node-v"><a href="#Node测试：node-v" class="headerlink" title="Node测试：node -v"></a><code>Node</code>测试：<code>node -v</code></h5></li>
+<li><h5 id="Npm测试：npm-v"><a href="#Npm测试：npm-v" class="headerlink" title="Npm测试：npm -v"></a><code>Npm</code>测试：<code>npm -v</code></h5></li>
+<li><h5 id="Git测试：git-version"><a href="#Git测试：git-version" class="headerlink" title="Git测试：git --version"></a><code>Git</code>测试：<code>git --version</code></h5></li>
+</ul>
+<p><img src="https://s1.ax1x.com/2020/10/13/04PKTP.png"></p>
+<h4 id="Hexo远端部署"><a href="#Hexo远端部署" class="headerlink" title="Hexo远端部署"></a><code>Hexo</code>远端部署</h4><ul>
+<li><h5 id="GitHub注册"><a href="#GitHub注册" class="headerlink" title="GitHub注册"></a><code>GitHub</code>注册</h5><p>登录<a href="https://github.com/">GitHub官网</a>使用邮箱注册，选择免费账户（<code>Free</code>），并完成邮件验证。</p>
+<p>如有账号，直接点击<code>Sin in</code>进入即可！</p>
+</li>
+</ul>
+<p><img src="https://s1.ax1x.com/2020/10/13/04FaGT.png"></p>
+<p>注册完成后，还需要在本地配置一下自己的个人信息，进入博客根目录，<code>右键  -&gt; Git Bash Here</code>，设置用户名和邮箱：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git config --global user.name <span class="string">&quot;GitHub 用户名&quot;</span></span><br><span class="line">$ git config --global user.email <span class="string">&quot;GitHub 邮箱&quot;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><h5 id="创建-SSH-密匙"><a href="#创建-SSH-密匙" class="headerlink" title="创建 SSH 密匙"></a>创建 SSH 密匙</h5><p>输入<code>ssh-keygen -t rsa -C &quot;GitHub 邮箱&quot;</code>，然后一直按回车。</p>
+</li>
+</ul>
+<p><img src="https://s1.ax1x.com/2020/10/13/04AIUI.png"></p>
+<ul>
+<li><h5 id="添加密钥"><a href="#添加密钥" class="headerlink" title="添加密钥"></a>添加密钥</h5><p>① 进入 <code>[C:\Users\用户名.ssh]</code> 目录（要勾选显示“隐藏的项目”），用记事本打开<code>id_rsa.pub</code> 文件并复制里面的内容。</p>
+</li>
+</ul>
+<p><img src="https://s1.ax1x.com/2020/10/13/04EAr4.png"></p>
+<p>​        ② 登陆<code>GitHub</code>，进入 <code>Settings</code> 页面，选择左边栏的 <code>SSH and GPG keys</code>，点击 <code>New SSH key</code>。</p>
+<p><img src="https://s1.ax1x.com/2020/10/13/04EDsg.png"></p>
+<p>​        ③ <code>Title</code> 随便取个名字，粘贴复制的 <code>id_rsa.pub</code> 内容到 <code>Key</code> 中，点击 <code>Add SSH key</code> 完成添加。</p>
+<ul>
+<li><h5 id="验证连接"><a href="#验证连接" class="headerlink" title="验证连接"></a>验证连接</h5></li>
+</ul>
+<p>进入博客根目录打开 <code>Git Bash</code>，输入 <code>ssh -T git@github.com</code> 出现 <code>“Are you sure……”</code>，输入 <code>yes</code> 回车确认。</p>
+<p>显示 <code>“Hi xxx! You’ve successfully……”</code> 即连接成功。</p>
+<p><img src="https://s1.ax1x.com/2020/10/13/04VhtI.png"></p>
+<ul>
+<li><h5 id="创建GitHub-Pages仓库"><a href="#创建GitHub-Pages仓库" class="headerlink" title="创建GitHub Pages仓库"></a>创建<code>GitHub Pages</code>仓库</h5><p><code>GitHub</code> 主页右上角加号 -&gt; <code>New repository</code>：</p>
+<p>① <code>Repository name</code> 中输入 <code>用户名.github.io</code></p>
+<p>② 勾选 <code>“Initialize this repository with中Add a README file”</code></p>
+<p>③ <code>Description</code> 选填</p>
+<p>④ 填好后点击 <code>Create repository</code> 创建。</p>
+</li>
+</ul>
+<p><img src="https://s1.ax1x.com/2020/10/13/04eSIA.png"></p>
+<p>创建后默认自动启用 <code>HTTPS</code>，博客地址为：<code>https://用户名.github.io</code></p>
+<h4 id="Hexo"><a href="#Hexo" class="headerlink" title="Hexo"></a><code>Hexo</code></h4><ul>
+<li><h5 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装<code>Hexo</code></h5><p>打开新建的<code>Blog</code>文件夹根目录，右键 -&gt; <code>Git Bash Here</code>。</p>
+</li>
+</ul>
+<p>使用 <code>npm</code> 一键安装 <code>Hexo</code> 博客程序：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+
+<p><a href="https://s1.ax1x.com/2020/07/28/aA6yO1.png"><img src="https://s1.ax1x.com/2020/07/28/aA6yO1.png" alt="Hexo安装成功"></a></p>
+<ul>
+<li><h5 id="Hexo初始化和本地预览"><a href="#Hexo初始化和本地预览" class="headerlink" title="Hexo初始化和本地预览"></a><code>Hexo</code>初始化和本地预览</h5><p>初始化并安装所需组件：</p>
+</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo init      <span class="comment"># 初始化（进行hexo init一定要保证文件夹为空文件夹）</span></span><br><span class="line">npm install    <span class="comment"># 安装组件</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://s1.ax1x.com/2020/10/14/04ovon.png"></p>
+<p>完成后依次输入下面命令，启动本地服务器进行预览：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo g   <span class="comment"># 生成页面</span></span><br><span class="line">hexo s   <span class="comment"># 启动预览</span></span><br></pre></td></tr></table></figure>
+
+<p>访问 <code>http://localhost:4000</code>，出现 <code>Hexo</code> 默认页面，本地博客安装成功！</p>
+<p><img src="https://s1.ax1x.com/2020/10/14/04TNfP.png"></p>
+<ul>
+<li><h5 id="部署-Hexo-到-GitHub"><a href="#部署-Hexo-到-GitHub" class="headerlink" title="部署 Hexo 到 GitHub"></a>部署 <code>Hexo</code> 到 <code>GitHub</code></h5><p>进入博客根目录，打开 <code>git bash</code> 输入 <code>npm install hexo-deployer-git --save</code> 命令安装插件:</p>
+</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+
+<p>然后修改 <code>_config.yml</code> 文件末尾的 <code>Deployment</code> 部分，修改成如下：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  <span class="built_in">type</span>: git</span><br><span class="line">  repository: git@github.com:用户名/用户名.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
+
+<p>完成后先运行<code>hexo clean</code>，在运行 <code>hexo g -d</code> 将网站上传部署到 <code>GitHub</code> 。</p>
+<p>完成！这时访问我们的 <code>GitHub</code> 域名 <code>https://用户名.github.io</code> 就可以看到 <code>Hexo</code> 网站了。</p>
+<ul>
+<li><h5 id="发布博客"><a href="#发布博客" class="headerlink" title="发布博客"></a>发布博客</h5><p>进入博客根目录，右键打开 <code>Git Bash Here</code>，创建博文：</p>
+</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo new <span class="string">&quot;xxxx&quot;</span>  <span class="comment">#新建文章</span></span><br></pre></td></tr></table></figure>
+
+<p>然后 <code>source</code> 文件夹中会出现一个 <code>xxxx.md</code> 文件，就可以使用 <code>Markdown</code> 编辑器，推荐<a href="https://typora.io/">Typora</a>。</p>
+<p>写完后运行下面代码将文章渲染并部署到 <code>GitHub Pages</code> 上完成发布。</p>
+<p>每次发布文章都是顺序执行下面三条命令（建议在本地预览之后在选择部署到<code>GitHub</code>），如在本地预览则把<code>hexo d</code>换为<code>hexo s</code>即可。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo clean   <span class="comment">#清除缓存</span></span><br><span class="line">hexo g       <span class="comment"># 生成页面</span></span><br><span class="line">hexo d       <span class="comment"># 部署发布（hexo s  #启动服务预览）  </span></span><br><span class="line">hexo g -d    <span class="comment">#生成页面部署发布一体化操作</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="Hexo常用命令"><a href="#Hexo常用命令" class="headerlink" title="Hexo常用命令"></a><code>Hexo</code>常用命令</h4><ul>
+<li><h5 id="初始化命令"><a href="#初始化命令" class="headerlink" title="初始化命令"></a>初始化命令</h5></li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install hexo -g      <span class="comment">#全局安装Hexo</span></span><br><span class="line">npm update hexo -g       <span class="comment">#升级 </span></span><br><span class="line">hexo init                <span class="comment">#初始化</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><h5 id="命令简称"><a href="#命令简称" class="headerlink" title="命令简称"></a>命令简称</h5></li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo n <span class="string">&quot;xxxx&quot;</span> = hexo new <span class="string">&quot;xxxx&quot;</span>     <span class="comment">#新建文章</span></span><br><span class="line">hexo g = hexo generate              <span class="comment">#渲染</span></span><br><span class="line">hexo s = hexo server                <span class="comment">#本地预览</span></span><br><span class="line">hexo d = hexo deploy                <span class="comment">#部署</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><h5 id="其他命令"><a href="#其他命令" class="headerlink" title="其他命令"></a>其他命令</h5></li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo server      //Hexo会监视文件变动并自动更新</span><br><span class="line">hexo server -s  //静态模式</span><br><span class="line">hexo server -p xxxx   //更改端口</span><br><span class="line">hexo server -i xxx.xxx.x.x   //自定义 IP</span><br><span class="line">hexo clean   //清除缓存，若是网页正常情况下可以忽略这条命令</span><br></pre></td></tr></table></figure>
+
+<h4 id="踩坑指南"><a href="#踩坑指南" class="headerlink" title="踩坑指南"></a>踩坑指南</h4><ul>
+<li><h5 id="404页面"><a href="#404页面" class="headerlink" title="404页面"></a>404页面</h5><p><img src="https://s1.ax1x.com/2020/10/14/04qZnO.png"></p>
+</li>
+</ul>
+<p>出现404界面的原因：</p>
+<p>① <code>Repository name</code>填写与<code>Owner</code>不一致</p>
+<p>② 勾选<code>Add a README file</code>，默认分支没有设置为<code>master</code></p>
+<p><img src="https://s1.ax1x.com/2020/10/14/04LKqU.png"></p>
+<p>如果<code>Repository name</code>不规范，只需去<code>Settings</code>更改<code>Repository name</code>即可</p>
+<p><img src="https://s1.ax1x.com/2020/10/14/04O80S.png"></p>
+<h4 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h4><ul>
+<li>博客图片不建议本地上传，建议采用<a href="https://imgchr.com/i/04O80S">路过图传</a></li>
+</ul>
+<p><img src="https://s1.ax1x.com/2020/10/14/04xuE8.png"></p>
+<ul>
+<li>所需软件、环境搭建，建议从官网入手</li>
+</ul>
+]]></content>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>web前端</title>
     <url>/post/b49262eb.html</url>
     <content><![CDATA[<h4 id="article元素"><a href="#article元素" class="headerlink" title="article元素"></a><code>article</code>元素</h4><ul>
@@ -408,6 +408,196 @@
 ]]></content>
       <tags>
         <tag>web前端</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>高中教师资格证信息技术</title>
+    <url>/post/22421593.html</url>
+    <content><![CDATA[<h4 id="第一节-信息与信息技术概述"><a href="#第一节-信息与信息技术概述" class="headerlink" title="第一节  信息与信息技术概述"></a>第一节  信息与信息技术概述</h4><h5 id="一、信息的定义"><a href="#一、信息的定义" class="headerlink" title="一、信息的定义"></a>一、信息的定义</h5><ul>
+<li><p>信息就是通过语言、文字、图形/像、声音等传播的内容。</p>
+</li>
+<li><p>信息≠消息，信息是消息的内核，消息是信息的外壳。</p>
+</li>
+<li><p>信息不实是某种信号，也不等同于知识。</p>
+</li>
+<li><p>数据（字母、数字符号、语言、图形/图像）是信息的载体。</p>
+</li>
+</ul>
+<p>【真题演练】</p>
+<p>有关消息和信息的关系描述中，正确的说法是（）。</p>
+<p>A、消息就是信息</p>
+<p>B、信息中包含了消息</p>
+<p>C、消息中包含了信息</p>
+<p>D、而这没有关系</p>
+<p>答案：C</p>
+<p>【真题演练】</p>
+<p>下列属于信息范畴的是（）。</p>
+<p>A、黑板</p>
+<p>B、数码相机</p>
+<p>C、键盘</p>
+<p>D、电视节目</p>
+<p>答案：D</p>
+<p>【真题演练】</p>
+<p>所谓信息的载体是指（）。</p>
+<p>A、计算机输入和输出的信息</p>
+<p>B、计算机屏幕显示的信息</p>
+<p>C、标识和传输信息的媒介</p>
+<p>D、各种信息的编码</p>
+<p>答案：C</p>
+<h5 id="二、信息的基本特征"><a href="#二、信息的基本特征" class="headerlink" title="二、信息的基本特征"></a>二、信息的基本特征</h5><ul>
+<li><p>普遍性</p>
+</li>
+<li><p>时效性</p>
+<p>会随时间推移而改变。</p>
+</li>
+<li><p>依附性</p>
+<p>信息不能独立存在，需要依附于一定的载体。</p>
+<p>同一个信息可以依附于不同的媒体。</p>
+</li>
+<li><p>价值型</p>
+<p>信息的价值也具有相对性。</p>
+</li>
+<li><p>共享性</p>
+<p>信息资源可以共享。</p>
+<p>信息共享不会丢失改变。</p>
+<p>信息可以被一次、多次、同时利用。</p>
+</li>
+<li><p>真伪性</p>
+</li>
+</ul>
+<p>其他特征：</p>
+<ul>
+<li>客观性</li>
+<li>无限性</li>
+<li>可度量</li>
+<li>可识别</li>
+<li>可转换</li>
+<li>可存储</li>
+<li>可处理</li>
+<li>可增值</li>
+<li>可再生</li>
+<li>可传递</li>
+<li>可压缩</li>
+</ul>
+<p>【经典例题】</p>
+<p>下面对信息特征的理解，错误的是（）。</p>
+<p>A、“增兵减灶”引出信息有传递性和可伪性特征</p>
+<p>B、天气预报、交通信息、股票行情等引出信息有时效性</p>
+<p>C、信息不会随着时间的推移而变化</p>
+<p>D、“一面之辞”引出信息具有不完全性</p>
+<p>答案：C</p>
+<p>【真题演练】</p>
+<p>电影院里人们可以共同欣赏一场电影，这体现了信息是（）。</p>
+<p>A、可再生的</p>
+<p>B、有价值的</p>
+<p>C、可传递的</p>
+<p>D、可共享的</p>
+<p>答案：D</p>
+<h5 id="三、信息的分类"><a href="#三、信息的分类" class="headerlink" title="三、信息的分类"></a>三、信息的分类</h5><h6 id="（1）加工顺序"><a href="#（1）加工顺序" class="headerlink" title="（1）加工顺序"></a>（1）加工顺序</h6><ul>
+<li>一次信息</li>
+<li>二次信息</li>
+<li>三次信息</li>
+</ul>
+<h6 id="（2）应用领域"><a href="#（2）应用领域" class="headerlink" title="（2）应用领域"></a>（2）应用领域</h6><ul>
+<li>管理信息</li>
+<li>社会信息</li>
+<li>军事信息</li>
+<li>文教信息</li>
+<li>经济信息</li>
+<li>科技信息</li>
+</ul>
+<h6 id="（3）反应形式"><a href="#（3）反应形式" class="headerlink" title="（3）反应形式"></a>（3）反应形式</h6><ul>
+<li>数字信息</li>
+<li>图像信息</li>
+<li>声音信息</li>
+</ul>
+<h4 id="第二节-信息技术的发展及应用"><a href="#第二节-信息技术的发展及应用" class="headerlink" title="第二节  信息技术的发展及应用"></a>第二节  信息技术的发展及应用</h4><h5 id="一、信息技术的含义"><a href="#一、信息技术的含义" class="headerlink" title="一、信息技术的含义"></a>一、信息技术的含义</h5><p>信息技术是指能扩展人的信息器官的功能，完成信息的获取、传递、加工、再生和使用等功能的一类技术。</p>
+<p>信息技术的“四基元”包括</p>
+<ul>
+<li><p>感测技术：感觉器官功能的延长</p>
+</li>
+<li><p>通信技术：传导神经网络功能的延长</p>
+</li>
+<li><p>计算机和智能技术：思维器官功能的延长</p>
+</li>
+<li><p>控制技术：效应器官功能的延长</p>
+<p>信息技术“四基元”和谐有机地合作，共同完成扩展人的智力功能的任务。</p>
+</li>
+</ul>
+<h5 id="二、信息技术的发展"><a href="#二、信息技术的发展" class="headerlink" title="二、信息技术的发展"></a>二、信息技术的发展</h5><p>以每一次信息技术革命为标志，信息技术的发展分为5个阶段：</p>
+<ul>
+<li>语言的使用</li>
+<li>文字的创造</li>
+<li>印刷的发明</li>
+<li>电报、电话、广播和电话的发明和普及应用</li>
+<li>电子计算机的普及应用及计算机与现代通信技术的有机结合</li>
+</ul>
+<p>【真题演练】</p>
+<p>第一次信息技术革命指的是（）。</p>
+<p>A、文字的使用</p>
+<p>B、语言的使用</p>
+<p>C、印刷术的使用</p>
+<p>D、计算机技术的使用</p>
+<p>答案：B</p>
+<p>【真题演练】</p>
+<p>下列有关信息的说法，正确的是（）。</p>
+<p>A、自从出现人类社会才有信息存在</p>
+<p>B、只有计算机才能处理信息</p>
+<p>C、第一次信息革命指的是语言的形成</p>
+<p>D、信息只能存储在计算机中</p>
+<p>答案：C</p>
+<h4 id="第三节-数制与信息编码"><a href="#第三节-数制与信息编码" class="headerlink" title="第三节  数制与信息编码"></a>第三节  数制与信息编码</h4><h5 id="一、数制的基本概念"><a href="#一、数制的基本概念" class="headerlink" title="一、数制的基本概念"></a>一、数制的基本概念</h5><p>数制也称为计数制，用一组固定的符号和统一的规则来表示数值的方法。常用的数制都采用进位计数制。</p>
+<p>进位计数制涉及：</p>
+<ul>
+<li>数码</li>
+<li>基数</li>
+<li>位权</li>
+</ul>
+<p>例如：十进制123</p>
+<p><a href="https://imgchr.com/i/srLSHJ"><img src="https://s3.ax1x.com/2021/01/17/srLSHJ.png"></a></p>
+<p>常用的进位计数制有：</p>
+<ul>
+<li>十进制</li>
+<li>二进制</li>
+<li>八进制</li>
+<li>十六进制  </li>
+</ul>
+<p><a href="https://imgchr.com/i/sskxKJ"><img src="https://s3.ax1x.com/2021/01/17/sskxKJ.png"></a></p>
+<p>【真题演练】</p>
+<p>下列数值表示正确的是（）。</p>
+<p><a href="https://imgchr.com/i/ssAuVI"><img src="https://s3.ax1x.com/2021/01/17/ssAuVI.png"></a></p>
+<p>答案：C</p>
+<p>【真题演练】</p>
+<p>下列数据中最大的是（）。</p>
+<p><code>A、228O</code></p>
+<p><code>B、1FFH</code></p>
+<p><code>C、10100001B</code></p>
+<p><code>D、710D</code></p>
+<p>答案：D</p>
+<h5 id="二、不同进制之间的转换"><a href="#二、不同进制之间的转换" class="headerlink" title="二、不同进制之间的转换"></a>二、不同进制之间的转换</h5><p>（1）非十进制 =&gt; 十进制</p>
+<p>方法</p>
+<ul>
+<li>按位权展开，并逐项相加</li>
+</ul>
+<p>例：将二进制的1101.011数和16禁止的<code>2B3.A2</code>数分别转换为十进制数。</p>
+<p><a href="https://imgchr.com/i/sstEz4"><img src="https://s3.ax1x.com/2021/01/17/sstEz4.png"></a></p>
+<p>（2）十进制 = &gt; 非十进制</p>
+<p>方法</p>
+<ul>
+<li>整数部分（辗转相除）</li>
+<li>小数部分（辗转相乘）</li>
+</ul>
+<p><a href="https://imgchr.com/i/sshFD1"><img src="https://s3.ax1x.com/2021/01/17/sshFD1.png"></a></p>
+<p><a href="https://imgchr.com/i/sshFD1"><img src="https://s3.ax1x.com/2021/01/17/sshFD1.png"></a></p>
+<p><a href="https://imgchr.com/i/sshGUf"><img src="https://s3.ax1x.com/2021/01/17/sshGUf.png"></a></p>
+<p>（3）二进制 = &gt; 八/十六进制</p>
+<p>方法：</p>
+<ul>
+<li>每3位或4位分组</li>
+</ul>
+]]></content>
+      <tags>
+        <tag>教师资格证</tag>
       </tags>
   </entry>
   <entry>
@@ -800,6 +990,266 @@
 <li><code>byte</code>类型，<code>short</code>类型和<code>char</code>类型将被提升到<code>int</code>类型</li>
 <li>整个表达式的类型自动提升到表达式中最高等级操作数同样的类型</li>
 <li>等级顺序：<code>byte</code>,<code>short</code>,<code>char</code>–&gt;<code>int</code>–&gt;<code>long</code>–&gt;<code>float</code>–&gt;<code>double</code></li>
+</ul>
+<h6 id="字符串的“-”操作"><a href="#字符串的“-”操作" class="headerlink" title="字符串的“+”操作"></a>字符串的“+”操作</h6><p>当“+”操作中出现字符串时，这个“+”是字符串连接符，而不是算术运算符。</p>
+<ul>
+<li>“<code>byx</code>” + 666</li>
+</ul>
+<p>当“+”操作中，如果出现了字符串，就是连接运算符，否则就是算术运算符。当连续进行“+”操作时，从左到右逐个进行。</p>
+<ul>
+<li>1 + 99 + “海龟”</li>
+</ul>
+<h5 id="赋值运算符"><a href="#赋值运算符" class="headerlink" title="赋值运算符"></a>赋值运算符</h5><table>
+<thead>
+<tr>
+<th align="center">符号</th>
+<th align="center">作用</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">=</td>
+<td align="center">赋值</td>
+<td align="center"><code>a</code> = 10，将10赋值给变量<code>a</code></td>
+</tr>
+<tr>
+<td align="center">+=</td>
+<td align="center">加后赋值</td>
+<td align="center"><code>a</code> += <code>b</code>，将<code>a</code> + <code>b</code>的值给<code>a</code></td>
+</tr>
+<tr>
+<td align="center">-=</td>
+<td align="center">减后赋值</td>
+<td align="center"><code>a</code> -= <code>b</code>，将<code>a</code> - <code>b</code>的值给<code>a</code></td>
+</tr>
+<tr>
+<td align="center">*=</td>
+<td align="center">乘后赋值</td>
+<td align="center"><code>a</code> *= <code>b</code>，将<code>a</code> * <code>b</code>的值给<code>a</code></td>
+</tr>
+<tr>
+<td align="center">/=</td>
+<td align="center">除后赋值</td>
+<td align="center"><code>a</code> /= <code>b</code>，将<code>a</code> / <code>b</code>的商给<code>a</code></td>
+</tr>
+<tr>
+<td align="center">%=</td>
+<td align="center">取余后赋值</td>
+<td align="center"><code>a</code> %= <code>b</code>，将<code>a</code> % <code>b</code>的余数给<code>a</code></td>
+</tr>
+</tbody></table>
+<p>注意事项：</p>
+<p>扩展的赋值运算符隐含了强制类型转换</p>
+<h5 id="自增自减运算符"><a href="#自增自减运算符" class="headerlink" title="自增自减运算符"></a>自增自减运算符</h5><table>
+<thead>
+<tr>
+<th align="center">符号</th>
+<th align="center">作用</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">++</td>
+<td align="center">自增</td>
+<td align="center">变量的值加1</td>
+</tr>
+<tr>
+<td align="center">–</td>
+<td align="center">自减</td>
+<td align="center">变量的值减1</td>
+</tr>
+</tbody></table>
+<p>注意事项：</p>
+<ul>
+<li>++和–即可以放在变量的后边，也可以放在变量的前边。</li>
+<li>单独使用的时候，++和–无论是放在变量的前边还是后边，结果是一致的。</li>
+<li>参与操作的时候，如果放在变量的后边，先拿变量参与操作，后拿变量做++或者–。</li>
+<li>参与操作的时候，如果放在变量的前边，先拿变量做++或者–，后拿变量参与操作。</li>
+<li>最常见的用法：单独使用</li>
+</ul>
+<h5 id="关系运算符"><a href="#关系运算符" class="headerlink" title="关系运算符"></a>关系运算符</h5><table>
+<thead>
+<tr>
+<th align="center">符号</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">==</td>
+<td align="center"><code>a</code> == <code>b</code>，判断<code>a</code>和<code>b</code>的值是否相等，成立则为<code>true</code>，不成立为<code>false</code></td>
+</tr>
+<tr>
+<td align="center">!=</td>
+<td align="center"><code>a</code> != <code>b</code>，判断<code>a</code>和<code>b</code>的值是否不相等，成立则为<code>true</code>，不成立为<code>false</code></td>
+</tr>
+<tr>
+<td align="center">&gt;</td>
+<td align="center"><code>a</code> &gt; <code>b</code>，判断<code>a</code>是否大于<code>b</code>，成立则为<code>true</code>，不成立为<code>false</code></td>
+</tr>
+<tr>
+<td align="center">&gt;=</td>
+<td align="center"><code>a</code> &gt;= <code>b</code>，判断a是否大于等于b，成立则为<code>true</code>，不成立为<code>false</code></td>
+</tr>
+<tr>
+<td align="center">&lt;</td>
+<td align="center"><code>a</code> &lt; <code>b</code>，判断a是否小于b，成立则为<code>true</code>，不成立为<code>false</code></td>
+</tr>
+<tr>
+<td align="center">&lt;=</td>
+<td align="center"><code>a</code> &lt;= <code>b</code>，判断a是否小于等于b，成立则为<code>true</code>，不成立为<code>false</code></td>
+</tr>
+</tbody></table>
+<p>注意事项：</p>
+<p>关系运算符的结果都是<code>boolean</code>类型，要么是<code>true</code>，要么是<code>false</code>，千万不要把“==”误写成“=”。</p>
+<h5 id="逻辑运算符"><a href="#逻辑运算符" class="headerlink" title="逻辑运算符"></a>逻辑运算符</h5><h6 id="逻辑运算符概述"><a href="#逻辑运算符概述" class="headerlink" title="逻辑运算符概述"></a>逻辑运算符概述</h6><p>在数学中，一个数据<code>x</code>，大于3，小于6，可以表示为：3 &lt; <code>x</code> &lt;6</p>
+<p>在<code>Java</code>中，需要把上面的式子进行拆解，在进行合并表达式。</p>
+<ul>
+<li>拆解为：<code>x</code> &gt; 3和<code>x</code> &lt; 6</li>
+<li>合并后：<code>x</code> &gt; 3 &amp;&amp; <code>x</code> &lt; 6</li>
+</ul>
+<p>&amp;&amp;就是一个逻辑运算符。</p>
+<p>逻辑运算符是用来连接关系表达式的运算符。</p>
+<p>逻辑运算符也可以直接连接布尔类型的常量或者变量。</p>
+<h6 id="逻辑运算符-1"><a href="#逻辑运算符-1" class="headerlink" title="逻辑运算符"></a>逻辑运算符</h6><table>
+<thead>
+<tr>
+<th align="center">符号</th>
+<th align="center">作用</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">&amp;</td>
+<td align="center">逻辑与</td>
+<td align="center"><code>a &amp; b</code>，<code>a</code>和<code>b</code>都是<code>true</code>，结果为<code>true</code>，否则为<code>false</code></td>
+</tr>
+<tr>
+<td align="center">|</td>
+<td align="center">逻辑或</td>
+<td align="center">`a</td>
+</tr>
+<tr>
+<td align="center">^</td>
+<td align="center">逻辑异或</td>
+<td align="center"><code>a &amp; b</code>，<code>a</code>和<code>b</code>不同为<code>true</code>，相同为为<code>false</code></td>
+</tr>
+<tr>
+<td align="center">!</td>
+<td align="center">逻辑非</td>
+<td align="center"><code>!a</code>，结果和<code>a</code>的结果正好相反</td>
+</tr>
+</tbody></table>
+<h6 id="短路逻辑运算符"><a href="#短路逻辑运算符" class="headerlink" title="短路逻辑运算符"></a>短路逻辑运算符</h6><table>
+<thead>
+<tr>
+<th align="center">符号</th>
+<th align="center">作用</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">&amp;&amp;</td>
+<td align="center">短路与</td>
+<td align="center">作用和&amp;相同，但有短路效果</td>
+</tr>
+<tr>
+<td align="center">||</td>
+<td align="center">短路或</td>
+<td align="center">作用和|相同，但是有短路效果</td>
+</tr>
+</tbody></table>
+<p>注意事项：</p>
+<ul>
+<li>逻辑与&amp;，无论左边真假，右边都要执行。</li>
+<li>短路与&amp;&amp;，如果左边为真，右边执行；如果左边为假，右边不执行。</li>
+<li>逻辑或|，无论左边真假，右边都要执行。</li>
+<li>短路或||，如果左边为假，右边执行；如果左边为真，右边不执行。</li>
+<li>最常用的逻辑运算符：&amp;&amp;，||，!</li>
+</ul>
+<h5 id="三元运算符"><a href="#三元运算符" class="headerlink" title="三元运算符"></a>三元运算符</h5><ul>
+<li>格式：关系表达式？表达式1：表达式2；</li>
+<li>范例：<code>a &gt; b ? a : b;</code></li>
+</ul>
+<p>计算规则：</p>
+<ul>
+<li>首先计算关系表达式的值</li>
+<li>如果值为<code>true</code>，表达式1的值就是运算结果</li>
+<li>如果值为<code>false</code>，表达式2的值就是运算结果</li>
+</ul>
+<h5 id="数据输入"><a href="#数据输入" class="headerlink" title="数据输入"></a>数据输入</h5><h6 id="Scanner使用的基本步骤"><a href="#Scanner使用的基本步骤" class="headerlink" title="Scanner使用的基本步骤"></a><code>Scanner</code>使用的基本步骤</h6><p>①导包</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"><span class="comment">//导包的动作必须出现在类定义的上边</span></span><br></pre></td></tr></table></figure>
+
+<p>②创建对象</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Scanner sc = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line"><span class="comment">//上面这个格式里只有sc是变量名，可以变，其他的都不允许变</span></span><br></pre></td></tr></table></figure>
+
+<p>③接收数据</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> i = sc.nextInt();</span><br><span class="line"><span class="comment">//上面这个格式里面，只有i是变量名，可以变，其他的都不允许变</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="流程控制"><a href="#流程控制" class="headerlink" title="流程控制"></a>流程控制</h5><h6 id="流程控制语句分类"><a href="#流程控制语句分类" class="headerlink" title="流程控制语句分类"></a>流程控制语句分类</h6><ul>
+<li>顺序结构</li>
+<li>分支结构(<code>if</code>,<code>switch</code>)</li>
+<li>循环结构(<code>for</code>,<code>while</code>,<code>do...while</code>)</li>
+</ul>
+<h6 id="顺序结构"><a href="#顺序结构" class="headerlink" title="顺序结构"></a>顺序结构</h6><p>顺序结构是程序中最简单、最基本的流程控制，没有特定的语法结构，按照代码的先后顺序，依次执行，程序中大多数的代码都是这样执行的。</p>
+<h5 id="if语句"><a href="#if语句" class="headerlink" title="if语句"></a><code>if</code>语句</h5><h6 id="if语句格式1"><a href="#if语句格式1" class="headerlink" title="if语句格式1"></a><code>if</code>语句格式1</h6><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">格式：</span><br><span class="line"><span class="keyword">if</span>(关系表达式)&#123;</span><br><span class="line">	语句体;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>执行流程：</p>
+<p>①首先计算关系表达式的值</p>
+<p>②如果关系表达式的值为<code>true</code>就执行语句体</p>
+<p>③如果关系表达式的值为<code>false</code>就不执行语句</p>
+<p>④继续执行后面的语句内容</p>
+<h5 id="if语句格式2"><a href="#if语句格式2" class="headerlink" title="if语句格式2"></a><code>if</code>语句格式2</h5><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">格式：</span><br><span class="line"><span class="keyword">if</span>(关系表达式)&#123;</span><br><span class="line">	语句体<span class="number">1</span>;</span><br><span class="line">&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">	语句体<span class="number">2</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>执行流程：</p>
+<p>①首先计算关系表达式的值</p>
+<p>②如果关系表达式的值为<code>true</code>就执行语句体1</p>
+<p>③如果关系表达式的值为<code>false</code>就不执行语句2</p>
+<p>④继续执行后面的语句内容</p>
+<h5 id="if语句格式3"><a href="#if语句格式3" class="headerlink" title="if语句格式3"></a><code>if</code>语句格式3</h5><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">格式：</span><br><span class="line"><span class="keyword">if</span>(关系表达式<span class="number">1</span>)&#123;</span><br><span class="line">	语句体<span class="number">1</span>;</span><br><span class="line">&#125;<span class="keyword">else</span> <span class="keyword">if</span>(关系表达式<span class="number">2</span>)&#123;</span><br><span class="line">	语句体<span class="number">2</span>;</span><br><span class="line">&#125;</span><br><span class="line">...</span><br><span class="line"><span class="keyword">else</span>&#123;</span><br><span class="line">	语句体n + <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>执行流程：</p>
+<p>①首先计算关系表达式1的值</p>
+<p>②如果关系表达式的值为<code>true</code>就执行语句体1；如果关系表达式的值为<code>false</code>就不执行语句2</p>
+<p>③如果关系表达式的值为<code>true</code>就执行语句体2；如果关系表达式的值为<code>false</code>就不执行语句3</p>
+<p>④……</p>
+<p>⑤如果没有任何关系表达式为<code>true</code>，就执行语句体<code>n</code> + 1</p>
+<h5 id="switch语句格式"><a href="#switch语句格式" class="headerlink" title="switch语句格式"></a><code>switch</code>语句格式</h5><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">格式：</span><br><span class="line"><span class="keyword">switch</span>(表达式)&#123;</span><br><span class="line">	<span class="keyword">case</span>值<span class="number">1</span>:</span><br><span class="line">		语句体<span class="number">1</span>;</span><br><span class="line">		<span class="keyword">break</span>;</span><br><span class="line">	<span class="keyword">case</span>值<span class="number">2</span>:</span><br><span class="line">		语句体<span class="number">2</span>;</span><br><span class="line">		<span class="keyword">break</span>;</span><br><span class="line">	...</span><br><span class="line">	<span class="keyword">default</span>:</span><br><span class="line">		语句体n + <span class="number">1</span>；</span><br><span class="line">		[<span class="keyword">break</span>;]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>格式说明：</p>
+<ul>
+<li>表达式：取值为<code>byte</code>、<code>short</code>、<code>char</code>，<code>JDK5</code>以后可以是枚举，<code>JDK7</code>以后可以是<code>String</code>。</li>
+<li><code>case</code>：后面跟的是要和表达式比较的值。</li>
+<li><code>break</code>：表示中断、结束的意思，用来结束<code>switch</code>语句</li>
+<li><code>default</code>：表示所有情况都不匹配的时候，就执行该处内容，和<code>if</code>语句的<code>else</code>相似</li>
+</ul>
+<p>执行流程：</p>
+<p>①首先计算表达式的值</p>
+<p>②依次和<code>case</code>后面的值进行比较，如果有对应的值，就会执行相应的语句，在执行过程中，遇到<code>break</code>就会结束</p>
+<p>③如果所有的<code>case</code>后面的值和表达式的值都不匹配，就会执行<code>default</code>里面的语句，然后结束该程序</p>
+<h5 id="for循环语句"><a href="#for循环语句" class="headerlink" title="for循环语句"></a><code>for</code>循环语句</h5><p>特征：</p>
+<ul>
+<li>重复做某件事</li>
+<li>具有明确的开始和停止标志</li>
+</ul>
+<h6 id="循环结构"><a href="#循环结构" class="headerlink" title="循环结构"></a>循环结构</h6><p>循环结构的组成：</p>
+<p>初始化语句：用于表示循环开启时的起始状态，简单说就是循环开始的时候什么样</p>
+<p>条件判断语句：用于循环反复执行的条件，简单说就是判断循环是否能一直执行下去</p>
+<p>循环体语句：用于循环反复执行的内容，简单说就是循环反复执行的事情</p>
+<p>条件控制语句：用于表示循环执行中每次变化的内容，简单说就是控制循环是否能执行下去</p>
+<p>循环结构对应的语法：</p>
+<p>初始化语句：这里可以是一条或多条语句，这些语句可以完成一些初始化操作</p>
+<p>条件判断语句：这里使用一个结果值为<code>boolean</code>类型的表达式，这个表达式能决定是否执行循环体</p>
+<p>循环体语句：这里可以是任意语句，这些语句将反复执行</p>
+<p>条件控制语句：这里通常是使用一条语句来改变变量的值，从而达到控制循环体是否继续向下执行的效果。</p>
+<h6 id="for循环语句格式"><a href="#for循环语句格式" class="headerlink" title="for循环语句格式"></a><code>for</code>循环语句格式</h6><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">格式：</span><br><span class="line"><span class="keyword">for</span>(初始化语句；条件判断语句；条件控制语句)&#123;</span><br><span class="line">	循环体语句；</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>执行流程：</p>
+<ul>
+<li>执行初始化语句</li>
+<li>执行条件判断语句，看其结果是<code>true</code>还是<code>false</code>，如果是<code>false</code>，循环结束；如果是<code>true</code>，继续执行</li>
+<li>执行循环体语句</li>
+<li>执行条件控制语句</li>
+<li>回到第二点继续</li>
 </ul>
 ]]></content>
       <tags>
